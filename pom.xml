@@ -239,7 +239,7 @@
 
         <site.topbar>
             <![CDATA[
-            <div id="dkmbar-container" style="font: normal 14px/1.5em 'Lato', 'Droid Sans', sans-serif !important;">
+            <div id="dkmbar-container" style="font: normal 14px/1.5em sans-serif !important;">
                 <div id="dkmbar">
                     <div id="dkmbar-logos">
                         <a href='https://www.fbk.eu/'>
