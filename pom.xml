@@ -151,7 +151,6 @@
 
     <build>
         <pluginManagement>
-
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -194,15 +193,6 @@
                             </goals>
                         </execution>
                     </executions>
-                    <configuration>
-                        <descriptors>
-                            <descriptor>src/main/assembly/src.xml</descriptor>
-                            <descriptor>src/main/assembly/bin.xml</descriptor>
-                        </descriptors>
-                        <descriptorRefs>
-                            <descriptorRef>jar-with-dependencies</descriptorRef>
-                        </descriptorRefs>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -254,7 +244,7 @@
                     </div>
                     <ul>
                         <li class="nav-button nav-button-pikes"><a href='http://pikes.fbk.eu'>PIKES</a></li>
-                        <li class="nav-button nav-button-rdfpro"><a href='http://rdfpro.fbk.eu'><span>RDF</span><sub>PRO</sub></a></li>
+                        <li class="nav-button nav-button-rdfpro"><a href='http://rdfpro.fbk.eu'><span>RDF</span><sub>pro</sub></a></li>
                         <li class="nav-button nav-button-ks"><a href='http://knowledgestore.fbk.eu'>KnowledgeStore</a></li>
                         <li class="nav-button nav-button-texowl"><a href='https://dkm.fbk.eu/technologies/tex-owl'>TeX-OWL</a></li>
                         <li class="nav-button nav-button-moki"><a href='https://moki.fbk.eu/website/index.php'>MoKi</a></li>
