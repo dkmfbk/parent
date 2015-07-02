@@ -24,6 +24,16 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-core</artifactId>
+                <version>${lucene.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -207,6 +217,8 @@
         <maven-assembly-plugin.version>2.3</maven-assembly-plugin.version>
         <dependency-plugin.version>2.8</dependency-plugin.version>
 
+        <log4j.version>1.2.17</log4j.version>
+        <lucene.version>2.9.2</lucene.version>
         <google-guava.version>17.0</google-guava.version>
         <commons-cli.version>1.2</commons-cli.version>
         <commons-io.version>2.4</commons-io.version>
