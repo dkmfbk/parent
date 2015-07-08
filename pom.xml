@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>eu.fbk</groupId>
+    <groupId>eu.fbk.dkm</groupId>
     <artifactId>fbk-parent</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -185,6 +185,136 @@
                 <artifactId>jdom2</artifactId>
                 <version>${jdom2.version}</version>
             </dependency>
+
+            <!-- Sesame stuff -->
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-datatypes</artifactId>
+                <version>${sesame-version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-languages</artifactId>
+                <version>${sesame-version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-model</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-api</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-binary</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-n3</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-nquads</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-ntriples</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-rdfjson</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-rdfxml</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-trig</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-trix</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-turtle</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-http-client</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-http-protocol</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-repository-api</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-query</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryresultio-api</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryresultio-sparqlxml</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryalgebra-model</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryalgebra-evaluation</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryparser-api</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryparser-sparql</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-util</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryrender</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -333,6 +463,7 @@
         <jdom2.version>2.0.4</jdom2.version>
         <utils.version>1.0</utils.version>
         <twm-core.version>1.4</twm-core.version>
+        <sesame-version>2.7.14</sesame-version>
 
         <site.topbar>
             <![CDATA[
