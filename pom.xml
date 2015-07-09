@@ -30,12 +30,157 @@
         </license>
     </licenses>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencyManagement>
         <dependencies>
+
+            <!-- KnowledgeStore -->
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-core</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-core</artifactId>
+                <version>${knowledgestore-version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-client</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-server</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-server</artifactId>
+                <version>${knowledgestore-version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-server-http</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-server-http</artifactId>
+                <type>test-jar</type>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-server-virtuoso</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-server-hbase</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-populator-naf</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-populator-rdf</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-tool</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-distribution</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+
+            <!-- RDFpro -->
+            <dependency>
+                <groupId>eu.fbk.rdfpro</groupId>
+                <artifactId>rdfpro-core</artifactId>
+                <version>${rdfpro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.rdfpro</groupId>
+                <artifactId>rdfpro-groovy</artifactId>
+                <version>${rdfpro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.rdfpro</groupId>
+                <artifactId>rdfpro-jsonld</artifactId>
+                <version>${rdfpro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.rdfpro</groupId>
+                <artifactId>rdfpro-tql</artifactId>
+                <version>${rdfpro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.rdfpro</groupId>
+                <artifactId>rdfpro-dist</artifactId>
+                <version>${rdfpro-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.rdfpro</groupId>
+                <artifactId>rdfpro-rules</artifactId>
+                <version>${rdfpro-version}</version>
+            </dependency>
+
+            <!-- PIKES -->
+            <dependency>
+                <groupId>eu.fbk.pikes</groupId>
+                <artifactId>pikes-naflib</artifactId>
+                <version>${pikes-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.pikes</groupId>
+                <artifactId>pikes-resources</artifactId>
+                <version>${pikes-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.pikes</groupId>
+                <artifactId>pikes-rdf</artifactId>
+                <version>${pikes-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.pikes</groupId>
+                <artifactId>pikes-tintop</artifactId>
+                <version>${pikes-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.pikes</groupId>
+                <artifactId>pikes-raid</artifactId>
+                <version>${pikes-version}</version>
+            </dependency>
+
+            <!-- UTILS -->
+            <dependency>
+                <groupId>eu.fbk.dkm.utils</groupId>
+                <artifactId>utils</artifactId>
+                <version>${utils-version}</version>
+            </dependency>
+
+            <!-- TheWikiMachine -->
             <dependency>
                 <groupId>org.fbk.cit.hlt</groupId>
                 <artifactId>core</artifactId>
-                <version>${twm-core.version}</version>
+                <version>${twm-core-version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-beanutils</groupId>
@@ -48,47 +193,77 @@
                 </exclusions>
             </dependency>
             <dependency>
+                <groupId>org.fbk.cit.hlt</groupId>
+                <artifactId>thewikimachine</artifactId>
+                <version>${thewikimachine-version}</version>
+            </dependency>
+
+            <!-- Snowball stemmer -->
+            <dependency>
                 <groupId>org.tartarus.snowball</groupId>
                 <artifactId>snowball</artifactId>
-                <version>${snowball.version}</version>
+                <version>${snowball-version}</version>
+            </dependency>
+
+            <!-- GuessEncoding utility library -->
+            <dependency>
+                <groupId>org.codehaus.guessencoding</groupId>
+                <artifactId>guessencoding</artifactId>
+                <version>${guessencoding-version}</version>
+            </dependency>
+
+            <!-- JDOM2 -->
+            <dependency>
+                <groupId>org.jdom</groupId>
+                <artifactId>jdom2</artifactId>
+                <version>${jdom2-version}</version>
+            </dependency>
+
+            <!-- Stanford CoreNLP -->
+            <dependency>
+                <groupId>edu.stanford.nlp</groupId>
+                <artifactId>stanford-corenlp</artifactId>
+                <version>${corenlp-version}</version>
             </dependency>
             <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>${log4j.version}</version>
+                <groupId>edu.stanford.nlp</groupId>
+                <artifactId>stanford-corenlp</artifactId>
+                <version>${corenlp-version}</version>
+                <classifier>models</classifier>
+            </dependency>
+
+            <!-- SLF4J -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.lucene</groupId>
-                <artifactId>lucene-core</artifactId>
-                <version>${lucene.version}</version>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j-version}</version>
             </dependency>
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${slf4j-version}</version>
             </dependency>
             <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${google-guava.version}</version>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${slf4j-version}</version>
             </dependency>
-            <dependency>
-                <groupId>commons-cli</groupId>
-                <artifactId>commons-cli</artifactId>
-                <version>${commons-cli.version}</version>
-            </dependency>
+
+            <!-- Logback -->
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
-                <version>${logback.version}</version>
-                <optional>true</optional>
+                <version>${logback-version}</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>${logback.version}</version>
-                <optional>true</optional>
+                <version>${logback-version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.apache.tomcat</groupId>
@@ -101,103 +276,299 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>com.google.code.findbugs</groupId>
-                <artifactId>jsr305</artifactId>
-                <version>${jsr305.version}</version>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-access</artifactId>
+                <version>${logback-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.tomcat</groupId>
+                        <artifactId>tomcat-juli</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.tomcat</groupId>
+                        <artifactId>tomcat-util</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
+
+            <!-- Log4j -->
             <dependency>
-                <groupId>eu.fbk.dkm.utils</groupId>
-                <artifactId>utils</artifactId>
-                <version>${utils.version}</version>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j-version}</version>
             </dependency>
+
+            <!-- JUnit -->
             <dependency>
-                <groupId>eu.fbk.pikes</groupId>
-                <artifactId>pikes-naflib</artifactId>
-                <version>${pikes.version}</version>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit-version}</version>
             </dependency>
+
+            <!-- Groovy -->
             <dependency>
-                <groupId>eu.fbk.pikes</groupId>
-                <artifactId>pikes-resources</artifactId>
-                <version>${pikes.version}</version>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy-version}</version>
             </dependency>
+
+            <!-- Apache Commons -->
             <dependency>
-                <groupId>eu.fbk.pikes</groupId>
-                <artifactId>pikes-rdf</artifactId>
-                <version>${pikes.version}</version>
+                <groupId>commons-cli</groupId>
+                <artifactId>commons-cli</artifactId>
+                <version>${commons-cli-version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>${commons-io.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.rdfpro</groupId>
-                <artifactId>rdfpro-core</artifactId>
-                <version>${rdfpro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.rdfpro</groupId>
-                <artifactId>rdfpro-tql</artifactId>
-                <version>${rdfpro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.fbk.cit.hlt</groupId>
-                <artifactId>thewikimachine</artifactId>
-                <version>${thewikimachine.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.spullara.mustache.java</groupId>
-                <artifactId>compiler</artifactId>
-                <version>${mustache.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>tw.edu.ntu.csie</groupId>
-                <artifactId>libsvm</artifactId>
-                <version>${libsvm.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.bwaldvogel</groupId>
-                <artifactId>liblinear</artifactId>
-                <version>${liblinear.version}</version>
+                <version>${commons-io-version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-lang</groupId>
                 <artifactId>commons-lang</artifactId>
-                <version>${commons-lang.version}</version>
+                <version>${commons-lang-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${commons-lang3.version}</version>
+                <version>${commons-lang3-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.guessencoding</groupId>
-                <artifactId>guessencoding</artifactId>
-                <version>${guessencoding.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jdom</groupId>
-                <artifactId>jdom2</artifactId>
-                <version>${jdom2.version}</version>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>${commons-math3-version}</version>
             </dependency>
 
-            <!-- Sesame stuff -->
+            <!-- Jansi -->
+            <dependency>
+                <groupId>org.fusesource.jansi</groupId>
+                <artifactId>jansi</artifactId>
+                <version>${jansi-version}</version>
+            </dependency>
+
+            <!-- Guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google-guava-version}</version>
+            </dependency>
+
+            <!-- JSR305 annotations -->
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${jsr305-version}</version>
+            </dependency>
+
+            <!-- Mustache -->
+            <dependency>
+                <groupId>com.github.spullara.mustache.java</groupId>
+                <artifactId>compiler</artifactId>
+                <version>${mustache-version}</version>
+            </dependency>
+
+            <!-- Libsvm -->
+            <dependency>
+                <groupId>tw.edu.ntu.csie</groupId>
+                <artifactId>libsvm</artifactId>
+                <version>${libsvm-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.bwaldvogel</groupId>
+                <artifactId>liblinear</artifactId>
+                <version>${liblinear-version}</version>
+            </dependency>
+
+            <!-- Lucene -->
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-core</artifactId>
+                <version>${lucene-version}</version>
+            </dependency>
+
+            <!-- HikaryCP connection pool -->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP-java6</artifactId>
+                <version>${hikari-version}</version>
+            </dependency>
+
+            <!-- Servlet API -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-version}</version>
+            </dependency>
+
+            <!-- JAX-RS API -->
+            <dependency>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>javax.ws.rs-api</artifactId>
+                <version>${jaxrs-version}</version>
+            </dependency>
+
+            <!-- Jetty -->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-server</artifactId>
+                <version>${jetty-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-jmx</artifactId>
+                <version>${jetty-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-webapp</artifactId>
+                <version>${jetty-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-security</artifactId>
+                <version>${jetty-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-util</artifactId>
+                <version>${jetty-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlets</artifactId>
+                <version>${jetty-version}</version>
+            </dependency>
+
+            <!-- Jersey -->
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-client</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-server</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-common</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-servlet</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-jetty-http</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.connectors</groupId>
+                <artifactId>jersey-apache-connector</artifactId>
+                <version>${jersey-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.httpcomponents</groupId>
+                        <artifactId>httpclient</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-multipart</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.test-framework</groupId>
+                <artifactId>jersey-test-framework-core</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.test-framework.providers</groupId>
+                <artifactId>jersey-test-framework-provider-jetty</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.ext</groupId>
+                <artifactId>jersey-mvc</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.ext</groupId>
+                <artifactId>jersey-mvc-mustache</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+
+            <!-- CORS filter -->
+            <dependency>
+                <groupId>org.ebaysf.web</groupId>
+                <artifactId>cors-filter</artifactId>
+                <version>${cors-filter-version}</version>
+            </dependency>
+
+            <!-- Apache HTTP Client -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpcore-version}</version>
+            </dependency>
+
+            <!-- Jolokia -->
+            <dependency>
+                <groupId>org.jolokia</groupId>
+                <artifactId>jolokia-core</artifactId>
+                <version>${jolokia-version}</version>
+            </dependency>
+
+            <!-- Jaxen -->
+            <dependency>
+                <groupId>jaxen</groupId>
+                <artifactId>jaxen</artifactId>
+                <version>${jaxen-version}</version>
+            </dependency>
+
+            <!-- Paranamer -->
+            <dependency>
+                <groupId>com.thoughtworks.paranamer</groupId>
+                <artifactId>paranamer</artifactId>
+                <version>${paranamer-version}</version>
+            </dependency>
+
+            <!-- Enunciate -->
+            <dependency>
+                <groupId>org.codehaus.enunciate</groupId>
+                <artifactId>enunciate-core-annotations</artifactId>
+                <version>${enunciate-version}</version>
+            </dependency>
+
+            <!-- SESAME -->
             <dependency>
                 <groupId>org.openrdf.sesame</groupId>
                 <artifactId>sesame-rio-datatypes</artifactId>
                 <version>${sesame-version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.openrdf.sesame</groupId>
                 <artifactId>sesame-rio-languages</artifactId>
                 <version>${sesame-version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.openrdf.sesame</groupId>
@@ -269,6 +640,16 @@
                 <artifactId>sesame-repository-api</artifactId>
                 <version>${sesame-version}</version>
             </dependency>
+             <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-repository-sail</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-repository-dataset</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.openrdf.sesame</groupId>
                 <artifactId>sesame-query</artifactId>
@@ -282,6 +663,21 @@
             <dependency>
                 <groupId>org.openrdf.sesame</groupId>
                 <artifactId>sesame-queryresultio-sparqlxml</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryresultio-binary</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryresultio-sparqljson</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-queryresultio-text</artifactId>
                 <version>${sesame-version}</version>
             </dependency>
             <dependency>
@@ -314,33 +710,82 @@
                 <artifactId>sesame-queryrender</artifactId>
                 <version>${sesame-version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-sail-api</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-sail-memory</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-sparql-testsuite</artifactId>
+                <version>${sesame-version}</version>
+            </dependency>
+
+            <!-- SEMARGL JSON-LD -->
+            <dependency>
+                <groupId>org.semarglproject</groupId>
+                <artifactId>semargl-jsonld</artifactId>
+                <version>${semargl-jsonld-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.semarglproject</groupId>
+                <artifactId>semargl-core</artifactId>
+                <version>${semargl-jsonld-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.semarglproject</groupId>
+                <artifactId>semargl-sesame</artifactId>
+                <version>${semargl-jsonld-version}</version>
+            </dependency>
+
+            <!-- Virtuoso -->
+            <dependency>
+                <groupId>com.openlinksw.virtuoso</groupId>
+                <artifactId>virtjdbc4_1</artifactId>
+                <version>${virtuoso-jdbc4_1-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.openlinksw.virtuoso</groupId>
+                <artifactId>virt_sesame2</artifactId>
+                <version>${virtuoso-sesame2-version}</version>
+            </dependency>
+
+            <!-- Drools -->
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-core</artifactId>
+                <version>${drools-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-compiler</artifactId>
+                <version>${drools-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-api</artifactId>
+                <version>${drools-version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <configuration>
-                    <licenseName>apache_v2</licenseName>
-                </configuration>
-            </plugin>
-        </plugins>
-
         <pluginManagement>
             <plugins>
-
-                <!-- Manage the licenses -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>1.8</version>
+                    <version>${license-plugin-version}</version>
                     <configuration>
-                        <!--<licenseName>apache_v2</licenseName>-->
                         <useMissingFile>true</useMissingFile>
-                        <fileTemplate>${project.basedir}/src/license/template.ftl</fileTemplate>
+                        <licenseResolver>${project.baseUri}${parent-path}/src/license</licenseResolver>
+                        <fileTemplate>${project.basedir}${parent-path}/src/license/template.ftl</fileTemplate>
                         <outputDirectory>${project.basedir}</outputDirectory>
                         <licenseMerges>
                             <licenseMerge>Apache Software License, Version 2.0|Apache Software Licenses|Similar to
@@ -384,14 +829,33 @@
                         </licenseMerges>
                     </configuration>
                 </plugin>
-
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${clean-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${deploy-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${install-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${release-plugin-version}</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${compiler-plugin.version}</version>
+                    <version>${compiler-plugin-version}</version>
                     <configuration>
-                        <source>${java.source.version}</source>
-                        <target>${java.target.version}</target>
+                        <source>${java-source-version}</source>
+                        <target>${java-target-version}</target>
                         <debug>true</debug>
                         <optimize>false</optimize>
                         <showDeprecation>true</showDeprecation>
@@ -401,69 +865,746 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${dependency-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>analyze</id>
-                            <goals>
-                                <goal>analyze-only</goal>
-                            </goals>
-                            <configuration>
-                                <failOnWarning>true</failOnWarning>
-                                <ignoreNonCompile>true</ignoreNonCompile>
-                            </configuration>
-                        </execution>
-                    </executions>
+                    <version>${dependency-plugin-version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${jar-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${source-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${maven-assembly-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <version>${assembly-plugin-version}</version>
+                    <configuration>
+                        <!-- avoid warnings for paths longer than 100 chars -->
+                        <tarLongFileMode>gnu</tarLongFileMode>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-eclipse-plugin</artifactId>
+                    <version>${eclipse-plugin-version}</version>
+                    <configuration>
+                        <downloadSources>true</downloadSources>
+                        <downloadJavadocs>true</downloadJavadocs>
+                        <useProjectReferences>true</useProjectReferences>
+                        <!--<additionalBuildcommands>
+                          <buildcommand>net.sf.eclipsecs.core.CheckstyleBuilder</buildcommand>
+                        </additionalBuildcommands>
+                        <additionalProjectnatures>
+                          <projectnature>net.sf.eclipsecs.core.CheckstyleNature</projectnature>
+                        </additionalProjectnatures>-->
+                        <!--<failOnError>false</failOnError>-->
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${site-plugin-version}</version>
+                    <configuration>
+                        <locales>en</locales>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>lt.velykis.maven.skins</groupId>
+                            <artifactId>reflow-velocity-tools</artifactId>
+                            <version>${reflow-skin-version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.velocity</groupId>
+                            <artifactId>velocity</artifactId>
+                            <version>${velocity-version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-markdown</artifactId>
+                            <version>${doxia-version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-xhtml</artifactId>
+                            <version>${doxia-version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${surefire-plugin-version}</version>
+                    <configuration>
+                        <argLine>-enableassertions</argLine>
+                        <includes>
+                            <include>**/*Test.java</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/Abstract*Test.java</exclude>
+                        </excludes>
+                        <testFailureIgnore>true</testFailureIgnore>
+                        <forkedProcessTimeoutInSeconds>10</forkedProcessTimeoutInSeconds>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${javadoc-plugin-version}</version>
+                    <configuration>
+                        <links>
+                            <link>http://java.sun.com/javase/6/docs/api/</link>
+                            <link>http://junit.sourceforge.net/javadoc/</link>
+                            <link>http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/</link>
+                            <link>http://openrdf.callimachus.net/sesame/2.7/apidocs/</link>
+                            <link>http://hadoop.apache.org/docs/r1.0.4/api/</link>
+                            <link>http://hbase.apache.org/0.94/apidocs/</link>
+                            <link>http://commons.apache.org/proper/commons-configuration/apidocs/</link>
+                            <link>http://www.slf4j.org/apidocs/</link>
+                        </links>
+                        <tags>
+                            <tag>
+                                <name>apiviz.uses</name>
+                                <placement>X</placement>
+                            </tag>
+                            <tag>
+                                <name>apiviz.has</name>
+                                <placement>X</placement>
+                            </tag>
+                            <tag>
+                                <name>apiviz.owns</name>
+                                <placement>X</placement>
+                            </tag>
+                            <tag>
+                                <name>apiviz.exclude</name>
+                                <placement>X</placement>
+                            </tag>
+                            <tag>
+                                <name>apiviz.landmark</name>
+                                <placement>X</placement>
+                            </tag>
+                            <tag>
+                                <name>apiviz.stereotype</name>
+                                <placement>X</placement>
+                            </tag>
+                        </tags>
+                        <show>protected</show>
+                        <quiet>true</quiet>
+                        <failOnError>false</failOnError>
+                        <additionalparam>-Xdoclint:none</additionalparam>
+                        <skip>${javadoc-skip}</skip>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>${jxr-plugin-version}</version>
+                    <configuration>
+                        <linkJavadoc>false</linkJavadoc>
+                        <stylesheet>${basedir}${parent-path}/src/site/xref.css</stylesheet>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jdepend-maven-plugin</artifactId>
+                    <version>${jdepend-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${versions-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${checkstyle-plugin-version}</version>
+                    <configuration>
+                        <enableRSS>true</enableRSS>
+                        <enableRulesSummary>false</enableRulesSummary>
+                        <enableFilesSummary>false</enableFilesSummary>
+                        <enableSeveritySummary>true</enableSeveritySummary>
+                        <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                        <configLocation>file:///${basedir}${parent-path}/src/settings/checkstyle.xml</configLocation>
+                        <linkXRef>true</linkXRef>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>${surefire-report-plugin-version}</version>
+                    <configuration>
+                        <aggregate>true</aggregate>
+                        <alwaysGenerateSurefireReport>true</alwaysGenerateSurefireReport>
+                        <linkXRef>true</linkXRef>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${pmd-plugin-version}</version>
+                    <configuration>
+                        <aggregate>true</aggregate>
+                        <targetJdk>${java-source-version}</targetJdk>
+                        <linkXref>true</linkXref>
+                        <sourceEncoding>UTF-8</sourceEncoding>
+                        <rulesets>
+                            <ruleset>file:///${basedir}${parent-path}/src/settings/pmd.xml</ruleset>
+                        </rulesets>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${findbugs-plugin-version}</version>
+                    <inherited>false</inherited>
+                    <configuration>
+                        <threshold>Normal</threshold>
+                        <effort>Default</effort>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>taglist-maven-plugin</artifactId>
+                    <version>${taglist-plugin-version}</version>
+                    <configuration>
+                        <tagListOptions>
+                            <tagClasses>
+                                <tagClass>
+                                    <displayName>Problems to fix</displayName>
+                                    <tags>
+                                        <tag>
+                                            <matchString>FIXME</matchString>
+                                            <matchType>ignoreCase</matchType>
+                                        </tag>
+                                    </tags>
+                                </tagClass>
+                                <tagClass>
+                                    <displayName>Functionalities to implement</displayName>
+                                    <tags>
+                                        <tag>
+                                            <matchString>TODO</matchString>
+                                            <matchType>ignoreCase</matchType>
+                                        </tag>
+                                    </tags>
+                                </tagClass>
+                                <tagClass>
+                                    <displayName>Implementation notes</displayName>
+                                    <tags>
+                                        <tag>
+                                            <matchString>XXX</matchString>
+                                            <matchType>ignoreCase</matchType>
+                                        </tag>
+                                    </tags>
+                                </tagClass>
+                            </tagClasses>
+                        </tagListOptions>
+                        <multiLineComments>true</multiLineComments>
+                        <sourceDirectory>${basedir}</sourceDirectory>
+                        <showEmptyDetails>true</showEmptyDetails>
+                        <emptyComments>true</emptyComments>
+                        <aggregate>true</aggregate>
+                        <linkXRef>true</linkXRef>
+                        <xrefLocation>${project.reporting.outputDirectory}/xref</xrefLocation>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-changelog-plugin</artifactId>
+                    <version>${changelog-plugin-version}</version>
+                    <configuration>
+                        <type>range</type>
+                        <range>30</range>
+                        <!-- last 30 days -->
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${shade-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.enunciate</groupId>
+                    <artifactId>maven-enunciate-plugin</artifactId>
+                    <version>${enunciate-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${nexus-staging-plugin}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.coderplus.maven.plugins</groupId>
+                    <artifactId>copy-rename-maven-plugin</artifactId>
+                    <version>${copy-rename-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${gpg-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${project-info-plugin-version}</version>
+                    <configuration>
+                        <!-- takes too long to generate... -->
+                        <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <inherited>false</inherited>
+                <configuration>
+                    <licenseName>apache_v2</licenseName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>analyze</id>
+                        <goals>
+                            <goal>analyze-only</goal>
+                        </goals>
+                        <configuration>
+                            <failOnWarning>true</failOnWarning>
+                            <ignoreNonCompile>true</ignoreNonCompile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
+
+    <profiles>
+
+        <!-- Profile enabling tasks done only at release time
+             (source and javadoc attachment, deployment on Maven Central)
+             Enable manually with -Prelease -->
+        <profile>
+            <id>release</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Profile for generating jar with test classes.
+             Activated automatically if directory src/test/java exists -->
+        <profile>
+            <id>testjar</id>
+            <activation>
+                <file>
+                    <exists>src/test/java</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>test-jar</goal>
+                                </goals>
+                                <phase>test-compile</phase>
+                                <configuration>
+                                    <includes>
+                                        <include>**</include>
+                                    </includes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Profile for skipping web site for modules without site sources.
+             Activated automatically if file src/site/site.xml does not exist -->
+        <profile>
+            <id>site-module</id>
+            <activation>
+                <file>
+                    <missing>${basedir}/src/site/site.xml</missing>
+                </file>
+            </activation>
+            <reporting>
+                <plugins>
+                    <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-site-plugin</artifactId>
+                      <configuration>
+                        <!-- Enable the following to skip totally the generation of site for modules
+                        <skip>true</skip>
+                        <skipDeploy>true</skipDeploy>
+                        -->
+                      </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-project-info-reports-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>index</report>
+                                    <report>summary</report>
+                                    <report>dependency-info</report>
+                                    <!-- <report>dependencies</report> --> <!-- USEFUL BUT BROKEN ON JAVA 8 -->
+                                    <report>plugins</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>jdepend-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>taglist-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </reporting>
+        </profile>
+
+        <!-- Profile for generating web site with a number of reports.
+             Activated automatically if file src/site/site.xml exists -->
+        <profile>
+            <id>site-parent</id>
+            <activation>
+                <file>
+                    <exists>${basedir}/src/site/site.xml</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- The following goal is necessary in order to allow child modules to
+                             inherit the site descriptor of the parent project -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-site-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-descriptor</id>
+                                <goals>
+                                    <goal>attach-descriptor</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>license-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>make-licenses</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>update-project-license</goal>
+                                    <goal>aggregate-add-third-party</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.coderplus.maven.plugins</groupId>
+                        <artifactId>copy-rename-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-file</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>copy</goal>
+                                </goals>
+                                <configuration>
+                                    <sourceFile>${basedir}/THIRD-PARTY.txt</sourceFile>
+                                    <destinationFile>${basedir}/src/site/markdown/third-party.md</destinationFile>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <reporting>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-site-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-project-info-reports-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>index</report>
+                                    <report>summary</report>
+                                    <report>license</report>
+                                    <report>scm</report>
+                                    <report>project-team</report>
+                                    <report>dependency-management</report>
+                                    <report>dependency-convergence</report>
+                                    <report>plugins</report>
+                                    <report>issue-tracking</report>
+                                    <report>modules</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>aggregate</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jxr-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>aggregate</report>
+                                    <report>test-aggregate</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>jdepend-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>versions-maven-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>property-updates-report</report>
+                                    <report>dependency-updates-report</report>
+                                    <report>plugin-updates-report</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>checkstyle-aggregate</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-report-plugin</artifactId>
+                    </plugin>
+                    <!--
+                    <plugin>
+                      <groupId>org.codehaus.mojo</groupId>
+                      <artifactId>cobertura-maven-plugin</artifactId>
+                      <version>${cobertura-plugin.version}</version>
+                      <configuration>
+                        <aggregate>${aggregate}</aggregate>
+                        <forceMojoExecution>true</forceMojoExecution>
+                        <quiet>true</quiet>
+                      </configuration>
+                    </plugin>
+                    -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>pmd</report>
+                                    <report>cpd</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>taglist-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-changelog-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>changelog</report>
+                                    <report>dev-activity</report>
+                                    <report>file-activity</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                </plugins>
+            </reporting>
+        </profile>
+    </profiles>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.source.version>1.8</java.source.version>
-        <java.target.version>1.8</java.target.version>
+        <java-source-version>1.8</java-source-version>
+        <java-target-version>1.8</java-target-version>
 
-        <compiler-plugin.version>3.1</compiler-plugin.version>
-        <maven-assembly-plugin.version>2.3</maven-assembly-plugin.version>
-        <dependency-plugin.version>2.8</dependency-plugin.version>
+        <clean-plugin-version>2.6.1</clean-plugin-version>
+        <deploy-plugin-version>2.8.2</deploy-plugin-version>
+        <install-plugin-version>2.5.2</install-plugin-version>
+        <release-plugin-version>2.5.2</release-plugin-version>
+        <compiler-plugin-version>3.3</compiler-plugin-version>
+        <license-plugin-version>1.8</license-plugin-version>
+        <jar-plugin-version>2.6</jar-plugin-version>
+        <source-plugin-version>2.4</source-plugin-version>
+        <assembly-plugin-version>2.5.4</assembly-plugin-version>
+        <eclipse-plugin-version>2.10</eclipse-plugin-version>
+        <site-plugin-version>3.4</site-plugin-version>
+        <surefire-plugin-version>2.18.1</surefire-plugin-version>
+        <javadoc-plugin-version>2.10.1</javadoc-plugin-version>
+        <dependency-plugin-version>2.10</dependency-plugin-version>
+        <shade-plugin-version>2.4</shade-plugin-version>
+        <enunciate-plugin-version>1.30.1</enunciate-plugin-version>
+        <nexus-staging-plugin>1.6.5</nexus-staging-plugin>
+        <copy-rename-plugin-version>1.0.1</copy-rename-plugin-version>
+        <project-info-plugin-version>2.8</project-info-plugin-version>
+        <jxr-plugin-version>2.5</jxr-plugin-version>
+        <jdepend-plugin-version>2.0</jdepend-plugin-version>
+        <versions-plugin-version>2.2</versions-plugin-version>
+        <checkstyle-plugin-version>2.14</checkstyle-plugin-version>
+        <surefire-report-plugin-version>2.18.1</surefire-report-plugin-version>
+        <pmd-plugin-version>3.5</pmd-plugin-version>
+        <taglist-plugin-version>2.4</taglist-plugin-version>
+        <changelog-plugin-version>2.3</changelog-plugin-version>
+        <findbugs-plugin-version>3.0.1</findbugs-plugin-version>
+        <gpg-plugin-version>1.6</gpg-plugin-version>
 
-        <snowball.version>1.0</snowball.version>
-        <log4j.version>1.2.17</log4j.version>
-        <lucene.version>2.9.2</lucene.version>
-        <google-guava.version>17.0</google-guava.version>
-        <commons-cli.version>1.2</commons-cli.version>
-        <commons-io.version>2.4</commons-io.version>
-        <junit.version>4.11</junit.version>
-        <logback.version>1.1.2</logback.version>
-        <jsr305.version>2.0.3</jsr305.version>
+        <reflow-skin-version>1.1.1</reflow-skin-version>
+        <velocity-version>1.7</velocity-version>
+        <doxia-version>1.6</doxia-version>
+        <javadoc-skip>false</javadoc-skip>
+        <project-version>${project.version}</project-version>
+        <site.root>http://knowledgestore.fbk.eu/</site.root>
+        <site-root>${site.root}</site-root>
+        <parent-path></parent-path>
+        <site-path>file://${basedir}${parent-path}/target/website/</site-path>
+
+        <pikes-version>1.0-SNAPSHOT</pikes-version>
+        <knowledgestore-version>1.6</knowledgestore-version>
+        <rdfpro-version>0.4</rdfpro-version>
+        <utils-version>1.0</utils-version>
+
+        <corenlp-version>3.4</corenlp-version>
+        <snowball-version>1.0</snowball-version>
+        <log4j-version>1.2.17</log4j-version>
+        <lucene-version>2.9.2</lucene-version>
+        <google-guava-version>18.0</google-guava-version>
+        <commons-cli-version>1.3.1</commons-cli-version>
+        <commons-io-version>2.4</commons-io-version>
+        <junit-version>4.12</junit-version>
+        <logback-version>1.1.3</logback-version>
+        <jsr305-version>3.0.0</jsr305-version>
         <!--<kaflib.version>1.1-SNAPSHOT</kaflib.version>-->
-        <pikes.version>1.0-SNAPSHOT</pikes.version>
-        <rdfpro.version>0.4</rdfpro.version>
-        <thewikimachine.version>1.3.1</thewikimachine.version>
-        <mustache.version>0.8.12</mustache.version>
-        <libsvm.version>3.17</libsvm.version>
-        <liblinear.version>1.95</liblinear.version>
-        <commons-lang.version>2.6</commons-lang.version>
-        <commons-lang3.version>3.4</commons-lang3.version>
-        <slf4j.version>1.7.7</slf4j.version>
-        <guessencoding.version>1.4</guessencoding.version>
-        <jdom2.version>2.0.4</jdom2.version>
-        <utils.version>1.0</utils.version>
-        <twm-core.version>1.4</twm-core.version>
-        <sesame-version>2.7.14</sesame-version>
+        <thewikimachine-version>1.3.1</thewikimachine-version>
+        <mustache-version>0.9.0</mustache-version>
+        <libsvm-version>3.17</libsvm-version>
+        <liblinear-version>1.95</liblinear-version>
+        <commons-lang-version>2.6</commons-lang-version>
+        <commons-lang3-version>3.4</commons-lang3-version>
+        <slf4j-version>1.7.12</slf4j-version>
+        <guessencoding-version>1.4</guessencoding-version>
+        <jdom2-version>2.0.6</jdom2-version>
+        <twm-core-version>1.4</twm-core-version>
+        <sesame-version>2.8.4</sesame-version>
+        <semargl-jsonld-version>0.6.1</semargl-jsonld-version>
+        <drools-version>6.3.0.Beta2</drools-version>
+        <groovy-version>2.4.3</groovy-version>
+        <commons-math3-version>3.5</commons-math3-version>
+        <virtuoso-jdbc4_1-version>2015-01-26</virtuoso-jdbc4_1-version>
+        <virtuoso-sesame2-version>2015-01-26</virtuoso-sesame2-version>
+        <hikari-version>2.3.8</hikari-version>
+        <jetty-version>9.3.0.M0</jetty-version>  <!-- cannot update due to http://jira.qos.ch/browse/LOGBACK-1052 -->
+        <jaxrs-version>2.0.1</jaxrs-version>
+        <servlet-version>3.1.0</servlet-version>
+        <jersey-version>2.19</jersey-version>
+        <jansi-version>1.11</jansi-version>
+        <enunciate-version>1.30.1</enunciate-version>
+        <paranamer-version>2.7</paranamer-version>
+        <jaxen-version>1.1.6</jaxen-version>
+        <cors-filter-version>1.0.1</cors-filter-version>
+        <httpclient-version>4.5</httpclient-version>
+        <httpcore-version>4.4.1</httpcore-version>
+        <jolokia-version>1.3.1</jolokia-version>
 
         <site.topbar>
             <![CDATA[
@@ -483,7 +1624,7 @@
                     <ul>
                         <li class="nav-button nav-button-pikes"><a href='http://pikes.fbk.eu'>PIKES</a></li>
                         <li class="nav-button nav-button-rdfpro"><a href='http://rdfpro.fbk.eu'><span>RDF</span><sub>pro</sub></a></li>
-                        <li class="nav-button nav-button-ks"><a href='http://knowledgestore.fbk.eu'>KnowledgeStore</a></li>
+                        <li class="nav-button nav-button-ks"><a href='http://knowledgestore.fbk.eu'>KnowledgeStore</a></li>com/google/guava/guava/
                         <li class="nav-button nav-button-texowl"><a href='https://dkm.fbk.eu/technologies/tex-owl'>TeX-OWL</a></li>
                         <li class="nav-button nav-button-moki"><a href='https://moki.fbk.eu/website/index.php'>MoKi</a></li>
                         <li class="nav-button nav-button-ckr"><a href='https://dkm.fbk.eu/technologies/ckr'>CKR</a></li>
