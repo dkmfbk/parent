@@ -3,17 +3,48 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>eu.fbk.dkm</groupId>
-    <artifactId>fbk-parent</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <artifactId>parent</artifactId>
+    <version>1.1</version>
     <packaging>pom</packaging>
     <inceptionYear>2015</inceptionYear>
 
-    <name>fbk-parent</name>
+    <name>parent</name>
+    <description>A set of common rules for development in DKM-FBK</description>
+    <url>http://dkm.fbk.eu/</url>
 
     <organization>
         <name>FBK-irst</name>
         <url>http://www.fbk.eu</url>
     </organization>
+
+    <developers>
+        <developer>
+            <id>rospocher</id>
+            <name>Marco Rospocher</name>
+            <email>rospocher@fbk.eu</email>
+            <url>https://dkm.fbk.eu/index.php/Marco_Rospocher</url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+            <properties>
+                <picUrl>http://rdfpro.fbk.eu/images/team/rospocher.jpg</picUrl>
+            </properties>
+        </developer>
+        <developer>
+            <id>aprosio</id>
+            <name>Alessio Palmero Aprosio</name>
+            <email>aprosio@fbk.eu</email>
+            <url>https://dkm.fbk.eu/people/profile/aprosio</url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+            <properties>
+                <picUrl>http://rdfpro.fbk.eu/images/team/aprosio.jpg</picUrl>
+            </properties>
+        </developer>
+    </developers>
 
     <repositories>
         <repository>
@@ -36,6 +67,13 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+
+    <scm>
+        <connection>scm:git:ssh://git@github.com/dkmfbk/parent.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/dkmfbk/parent.git</developerConnection>
+        <url>https://github.com/dkmfbk/parent</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <dependencyManagement>
         <dependencies>
@@ -1559,9 +1597,9 @@
         <parent-path></parent-path>
         <site-path>file://${basedir}${parent-path}/target/website/</site-path>
 
-        <pikes-version>1.0-SNAPSHOT</pikes-version>
-        <knowledgestore-version>1.6</knowledgestore-version>
-        <rdfpro-version>0.4</rdfpro-version>
+        <pikes-version>0.1</pikes-version>
+        <knowledgestore-version>1.6.1</knowledgestore-version>
+        <rdfpro-version>0.4.1</rdfpro-version>
         <utils-version>1.0</utils-version>
 
         <corenlp-version>3.4</corenlp-version>
