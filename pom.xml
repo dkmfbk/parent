@@ -174,11 +174,6 @@
                 <artifactId>rdfpro-dist</artifactId>
                 <version>${rdfpro-version}</version>
             </dependency>
-            <dependency>
-                <groupId>eu.fbk.rdfpro</groupId>
-                <artifactId>rdfpro-rules</artifactId>
-                <version>${rdfpro-version}</version>
-            </dependency>
 
             <!-- PIKES -->
             <dependency>
@@ -1136,8 +1131,8 @@
                     <version>${changelog-plugin-version}</version>
                     <configuration>
                         <type>range</type>
-                        <range>30</range>
-                        <!-- last 30 days -->
+                        <range>90</range>
+                        <!-- last 90 days -->
                     </configuration>
                 </plugin>
                 <plugin>
@@ -1179,6 +1174,11 @@
                         <!-- takes too long to generate... -->
                         <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>${antrun-plugin-version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -1425,7 +1425,7 @@
                                     <report>license</report>
                                     <report>scm</report>
                                     <report>project-team</report>
-                                    <report>dependency-management</report>
+                                    <!-- <report>dependency-management</report> --> <!-- commented as causes depedencies from unrelated projects to be listed -->
                                     <report>dependency-convergence</report>
                                     <report>plugins</report>
                                     <report>issue-tracking</report>
@@ -1467,7 +1467,7 @@
                         <reportSets>
                             <reportSet>
                                 <reports>
-                                    <report>property-updates-report</report>
+                                    <!-- <report>property-updates-report</report> -->
                                     <report>dependency-updates-report</report>
                                     <report>plugin-updates-report</report>
                                 </reports>
@@ -1569,6 +1569,7 @@
         <changelog-plugin-version>2.3</changelog-plugin-version>
         <findbugs-plugin-version>3.0.1</findbugs-plugin-version>
         <gpg-plugin-version>1.6</gpg-plugin-version>
+        <antrun-plugin-version>1.8</antrun-plugin-version>
 
         <reflow-skin-version>1.1.1</reflow-skin-version>
         <velocity-version>1.7</velocity-version>
@@ -1585,11 +1586,11 @@
         <rdfpro-version>0.5-SNAPSHOT</rdfpro-version>
         <utils-version>1.0</utils-version>
 
-        <corenlp-version>3.4</corenlp-version>
+        <corenlp-version>3.4</corenlp-version> <!-- newer version with incompatible API is 3.5.2 -->
         <snowball-version>1.0</snowball-version>
         <log4j-version>1.2.17</log4j-version>
         <lucene-version>2.9.2</lucene-version>
-        <google-guava-version>18.0</google-guava-version>
+        <google-guava-version>19.0-rc2</google-guava-version>
         <commons-cli-version>1.3.1</commons-cli-version>
         <commons-io-version>2.4</commons-io-version>
         <junit-version>4.12</junit-version>
@@ -1597,7 +1598,7 @@
         <jsr305-version>3.0.0</jsr305-version>
         <!--<kaflib.version>1.1-SNAPSHOT</kaflib.version>-->
         <thewikimachine-version>1.3.1</thewikimachine-version>
-        <mustache-version>0.9.0</mustache-version>
+        <mustache-version>0.9.1</mustache-version>
         <libsvm-version>3.17</libsvm-version>
         <liblinear-version>1.95</liblinear-version>
         <commons-lang-version>2.6</commons-lang-version>
@@ -1606,25 +1607,25 @@
         <guessencoding-version>1.4</guessencoding-version>
         <jdom2-version>2.0.6</jdom2-version>
         <twm-core-version>1.4</twm-core-version>
-        <sesame-version>2.8.4</sesame-version>
+        <sesame-version>2.8.6</sesame-version>
         <semargl-jsonld-version>0.6.1</semargl-jsonld-version>
-        <drools-version>6.3.0.Beta2</drools-version>
-        <groovy-version>2.4.3</groovy-version>
+        <drools-version>6.3.0.Final</drools-version>
+        <groovy-version>2.4.5</groovy-version>
         <commons-math3-version>3.5</commons-math3-version>
         <virtuoso-jdbc4_1-version>2015-01-26</virtuoso-jdbc4_1-version>
         <virtuoso-sesame2-version>2015-01-26</virtuoso-sesame2-version>
-        <hikari-version>2.3.8</hikari-version>
-        <jetty-version>9.3.3.v20150827</jetty-version>  <!-- cannot update due to http://jira.qos.ch/browse/LOGBACK-1052 -->
+        <hikari-version>2.3.10</hikari-version>
+        <jetty-version>9.3.4.RC0</jetty-version>  <!-- was 9.3.3.v20150827 - update problems due to http://jira.qos.ch/browse/LOGBACK-1052 -->
         <jaxrs-version>2.0.1</jaxrs-version>
         <servlet-version>3.1.0</servlet-version>
-        <jersey-version>2.19</jersey-version>
+        <jersey-version>2.22</jersey-version>
         <jansi-version>1.11</jansi-version>
-        <enunciate-version>1.30.1</enunciate-version>
-        <paranamer-version>2.7</paranamer-version>
+        <enunciate-version>1.31</enunciate-version>
+        <paranamer-version>2.8</paranamer-version>
         <jaxen-version>1.1.6</jaxen-version>
         <cors-filter-version>1.0.1</cors-filter-version>
-        <httpclient-version>4.5</httpclient-version>
-        <httpcore-version>4.4.1</httpcore-version>
+        <httpclient-version>4.5.1</httpclient-version>
+        <httpcore-version>4.4.3</httpcore-version>
         <jolokia-version>1.3.1</jolokia-version>
         <jersey-guava-version>2.17</jersey-guava-version>
 
