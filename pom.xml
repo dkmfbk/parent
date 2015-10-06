@@ -4,7 +4,7 @@
 
     <groupId>eu.fbk.dkm</groupId>
     <artifactId>parent</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
     <inceptionYear>2015</inceptionYear>
 
