@@ -1619,7 +1619,7 @@
         <pikes-version>0.1</pikes-version>
         <knowledgestore-version>1.6.1</knowledgestore-version>
         <rdfpro-version>0.5</rdfpro-version>
-        <utils-version>1.0</utils-version>
+        <utils-version>1.2</utils-version>
 
         <corenlp-version>3.4</corenlp-version>
         <!-- newer version with incompatible API is 3.5.2 -->
