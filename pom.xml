@@ -1681,7 +1681,7 @@
                         </span>
                     </div>
                     <ul>
-                        <li class="nav-button nav-button-premon"><a href='http://premon.fbk.eu'>Premon</a></li>
+                        <li class="nav-button nav-button-premon"><a href='http://premon.fbk.eu'>PreMOn</a></li>
                         <li class="nav-button nav-button-pikes"><a href='http://pikes.fbk.eu'>PIKES</a></li>
                         <li class="nav-button nav-button-rdfpro"><a href='http://rdfpro.fbk.eu'><span>RDF</span><sub>pro</sub></a></li>
                         <li class="nav-button nav-button-ks"><a href='http://knowledgestore.fbk.eu'>KnowledgeStore</a></li>
