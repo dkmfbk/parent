@@ -141,6 +141,11 @@
             </dependency>
             <dependency>
                 <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-server-elastic</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
                 <artifactId>ks-populator-naf</artifactId>
                 <version>${knowledgestore-version}</version>
             </dependency>
