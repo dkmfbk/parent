@@ -141,6 +141,11 @@
             </dependency>
             <dependency>
                 <groupId>eu.fbk.knowledgestore</groupId>
+                <artifactId>ks-server-elastic</artifactId>
+                <version>${knowledgestore-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>eu.fbk.knowledgestore</groupId>
                 <artifactId>ks-populator-naf</artifactId>
                 <version>${knowledgestore-version}</version>
             </dependency>
@@ -422,13 +427,6 @@
                 <groupId>de.bwaldvogel</groupId>
                 <artifactId>liblinear</artifactId>
                 <version>${liblinear-version}</version>
-            </dependency>
-
-            <!-- Lucene -->
-            <dependency>
-                <groupId>org.apache.lucene</groupId>
-                <artifactId>lucene-core</artifactId>
-                <version>${lucene-version}</version>
             </dependency>
 
             <!-- HikaryCP connection pool -->
@@ -1625,7 +1623,6 @@
         <!-- newer version with incompatible API is 3.5.2 -->
         <snowball-version>1.0</snowball-version>
         <log4j-version>1.2.17</log4j-version>
-        <lucene-version>2.9.2</lucene-version>
         <google-guava-version>19.0-rc2</google-guava-version>
         <commons-cli-version>1.3.1</commons-cli-version>
         <commons-io-version>2.4</commons-io-version>
