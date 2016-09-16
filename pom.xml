@@ -1623,7 +1623,7 @@
         <parent-path></parent-path>
         <site-path>file://${basedir}${parent-path}/target/website/</site-path>
 
-        <pikes-version>0.1</pikes-version>
+        <pikes-version>1.0-SNAPSHOT</pikes-version>
         <knowledgestore-version>1.6.1</knowledgestore-version>
         <rdfpro-version>0.5</rdfpro-version>
         <utils-version>1.2</utils-version>
