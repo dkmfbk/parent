@@ -2,18 +2,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>eu.fbk.dkm</groupId>
+    <groupId>eu.fbk.parent</groupId>
     <artifactId>parent</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <inceptionYear>2015</inceptionYear>
+    <inceptionYear>2016</inceptionYear>
 
     <name>parent</name>
-    <description>A set of common rules for development in DKM-FBK</description>
-    <url>http://dkm.fbk.eu/</url>
+    <description>A set of common rules for development in FBK</description>
+    <url>https://github.com/fbk/parent</url>
 
     <organization>
-        <name>FBK-irst</name>
+        <name>FBK</name>
         <url>http://www.fbk.eu</url>
     </organization>
 
@@ -28,19 +28,6 @@
             <timezone>+1</timezone>
             <properties>
                 <picUrl>http://rdfpro.fbk.eu/images/team/corcoglio.jpg</picUrl>
-            </properties>
-        </developer>
-        <developer>
-            <id>rospocher</id>
-            <name>Marco Rospocher</name>
-            <email>rospocher@fbk.eu</email>
-            <url>https://dkm.fbk.eu/index.php/Marco_Rospocher</url>
-            <roles>
-                <role>Developer</role>
-            </roles>
-            <timezone>+1</timezone>
-            <properties>
-                <picUrl>http://rdfpro.fbk.eu/images/team/rospocher.jpg</picUrl>
             </properties>
         </developer>
         <developer>
@@ -221,31 +208,9 @@
 
             <!-- UTILS -->
             <dependency>
-                <groupId>eu.fbk.dkm.utils</groupId>
+                <groupId>eu.fbk.utils</groupId>
                 <artifactId>utils</artifactId>
                 <version>${utils-version}</version>
-            </dependency>
-
-            <!-- TheWikiMachine -->
-            <dependency>
-                <groupId>org.fbk.cit.hlt</groupId>
-                <artifactId>core</artifactId>
-                <version>${twm-core-version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-beanutils</groupId>
-                        <artifactId>commons-beanutils-core</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.htmlparser</groupId>
-                        <artifactId>htmlparser</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.fbk.cit.hlt</groupId>
-                <artifactId>thewikimachine</artifactId>
-                <version>${thewikimachine-version}</version>
             </dependency>
 
             <!-- Snowball stemmer -->
@@ -1626,19 +1591,18 @@
         <pikes-version>1.0-SNAPSHOT</pikes-version>
         <knowledgestore-version>1.6.1</knowledgestore-version>
         <rdfpro-version>0.5</rdfpro-version>
-        <utils-version>1.2</utils-version>
+        <utils-version>3.0</utils-version>
 
         <corenlp-version>3.6.0</corenlp-version>
         <!-- newer version with incompatible API is 3.5.2 -->
         <snowball-version>1.0</snowball-version>
         <log4j-version>1.2.17</log4j-version>
-        <google-guava-version>19.0-rc2</google-guava-version>
+        <google-guava-version>20.0-rc1</google-guava-version>
         <commons-cli-version>1.3.1</commons-cli-version>
         <commons-io-version>2.4</commons-io-version>
         <junit-version>4.12</junit-version>
         <logback-version>1.1.3</logback-version>
         <jsr305-version>3.0.0</jsr305-version>
-        <thewikimachine-version>1.3.1</thewikimachine-version>
         <mustache-version>0.9.1</mustache-version>
         <libsvm-version>3.17</libsvm-version>
         <liblinear-version>1.95</liblinear-version>
@@ -1647,7 +1611,6 @@
         <slf4j-version>1.7.12</slf4j-version>
         <guessencoding-version>1.4</guessencoding-version>
         <jdom2-version>2.0.6</jdom2-version>
-        <twm-core-version>1.4</twm-core-version>
         <sesame-version>2.8.6</sesame-version>
         <semargl-jsonld-version>0.6.1</semargl-jsonld-version>
         <drools-version>6.3.0.Final</drools-version>
