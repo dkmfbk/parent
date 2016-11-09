@@ -2,18 +2,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>eu.fbk.dkm</groupId>
+    <groupId>eu.fbk.parent</groupId>
     <artifactId>parent</artifactId>
-    <version>1.4</version>
+    <version>2.0</version>
     <packaging>pom</packaging>
-    <inceptionYear>2015</inceptionYear>
+    <inceptionYear>2016</inceptionYear>
 
     <name>parent</name>
-    <description>A set of common rules for development in DKM-FBK</description>
-    <url>http://dkm.fbk.eu/</url>
+    <description>A set of common rules for development in FBK</description>
+    <url>https://github.com/fbk/parent</url>
 
     <organization>
-        <name>FBK-irst</name>
+        <name>FBK</name>
         <url>http://www.fbk.eu</url>
     </organization>
 
@@ -31,19 +31,6 @@
             </properties>
         </developer>
         <developer>
-            <id>rospocher</id>
-            <name>Marco Rospocher</name>
-            <email>rospocher@fbk.eu</email>
-            <url>https://dkm.fbk.eu/index.php/Marco_Rospocher</url>
-            <roles>
-                <role>Developer</role>
-            </roles>
-            <timezone>+1</timezone>
-            <properties>
-                <picUrl>http://rdfpro.fbk.eu/images/team/rospocher.jpg</picUrl>
-            </properties>
-        </developer>
-        <developer>
             <id>aprosio</id>
             <name>Alessio Palmero Aprosio</name>
             <email>aprosio@fbk.eu</email>
@@ -58,12 +45,12 @@
         </developer>
     </developers>
 
-    <repositories>
-        <repository>
-            <id>fbk-repo</id>
-            <url>https://raw.githubusercontent.com/fbk/mvn-repo/master/releases</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>fbk-repo</id>-->
+            <!--<url>https://raw.githubusercontent.com/fbk/mvn-repo/master/releases</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
     <licenses>
         <license>
@@ -90,162 +77,11 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- KnowledgeStore -->
+            <!-- GSON -->
             <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-core</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-core</artifactId>
-                <version>${knowledgestore-version}</version>
-                <type>test-jar</type>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-client</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-server</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-server</artifactId>
-                <version>${knowledgestore-version}</version>
-                <type>test-jar</type>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-server-http</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-server-http</artifactId>
-                <type>test-jar</type>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-server-virtuoso</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-server-hbase</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-server-elastic</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-populator-naf</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-populator-rdf</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-tool</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.knowledgestore</groupId>
-                <artifactId>ks-distribution</artifactId>
-                <version>${knowledgestore-version}</version>
-            </dependency>
-
-            <!-- RDFpro -->
-            <dependency>
-                <groupId>eu.fbk.rdfpro</groupId>
-                <artifactId>rdfpro-core</artifactId>
-                <version>${rdfpro-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.rdfpro</groupId>
-                <artifactId>rdfpro-groovy</artifactId>
-                <version>${rdfpro-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.rdfpro</groupId>
-                <artifactId>rdfpro-jsonld</artifactId>
-                <version>${rdfpro-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.rdfpro</groupId>
-                <artifactId>rdfpro-tql</artifactId>
-                <version>${rdfpro-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.rdfpro</groupId>
-                <artifactId>rdfpro-dist</artifactId>
-                <version>${rdfpro-version}</version>
-            </dependency>
-
-            <!-- PIKES -->
-            <dependency>
-                <groupId>eu.fbk.pikes</groupId>
-                <artifactId>pikes-naflib</artifactId>
-                <version>${pikes-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.pikes</groupId>
-                <artifactId>pikes-resources</artifactId>
-                <version>${pikes-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.pikes</groupId>
-                <artifactId>pikes-rdf</artifactId>
-                <version>${pikes-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.pikes</groupId>
-                <artifactId>pikes-tintop</artifactId>
-                <version>${pikes-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.fbk.pikes</groupId>
-                <artifactId>pikes-raid</artifactId>
-                <version>${pikes-version}</version>
-            </dependency>
-
-            <!-- UTILS -->
-            <dependency>
-                <groupId>eu.fbk.dkm.utils</groupId>
-                <artifactId>utils</artifactId>
-                <version>${utils-version}</version>
-            </dependency>
-
-            <!-- TheWikiMachine -->
-            <dependency>
-                <groupId>org.fbk.cit.hlt</groupId>
-                <artifactId>core</artifactId>
-                <version>${twm-core-version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-beanutils</groupId>
-                        <artifactId>commons-beanutils-core</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.htmlparser</groupId>
-                        <artifactId>htmlparser</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.fbk.cit.hlt</groupId>
-                <artifactId>thewikimachine</artifactId>
-                <version>${thewikimachine-version}</version>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson-version}</version>
             </dependency>
 
             <!-- Snowball stemmer -->
@@ -1623,22 +1459,16 @@
         <parent-path></parent-path>
         <site-path>file://${basedir}${parent-path}/target/website/</site-path>
 
-        <pikes-version>0.1</pikes-version>
-        <knowledgestore-version>1.6.1</knowledgestore-version>
-        <rdfpro-version>0.5</rdfpro-version>
-        <utils-version>1.2</utils-version>
-
-        <corenlp-version>3.4</corenlp-version>
+        <corenlp-version>3.6.0</corenlp-version>
         <!-- newer version with incompatible API is 3.5.2 -->
         <snowball-version>1.0</snowball-version>
         <log4j-version>1.2.17</log4j-version>
-        <google-guava-version>19.0-rc2</google-guava-version>
+        <google-guava-version>20.0-rc1</google-guava-version>
         <commons-cli-version>1.3.1</commons-cli-version>
         <commons-io-version>2.4</commons-io-version>
         <junit-version>4.12</junit-version>
         <logback-version>1.1.3</logback-version>
         <jsr305-version>3.0.0</jsr305-version>
-        <thewikimachine-version>1.3.1</thewikimachine-version>
         <mustache-version>0.9.1</mustache-version>
         <libsvm-version>3.17</libsvm-version>
         <liblinear-version>1.95</liblinear-version>
@@ -1647,7 +1477,6 @@
         <slf4j-version>1.7.12</slf4j-version>
         <guessencoding-version>1.4</guessencoding-version>
         <jdom2-version>2.0.6</jdom2-version>
-        <twm-core-version>1.4</twm-core-version>
         <sesame-version>2.8.6</sesame-version>
         <semargl-jsonld-version>0.6.1</semargl-jsonld-version>
         <drools-version>6.3.0.Final</drools-version>
@@ -1670,6 +1499,7 @@
         <httpcore-version>4.4.3</httpcore-version>
         <jolokia-version>1.3.1</jolokia-version>
         <jersey-guava-version>2.17</jersey-guava-version>
+        <gson-version>2.8.0</gson-version>
 
         <site.topbar>
             <![CDATA[
