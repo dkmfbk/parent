@@ -83,6 +83,37 @@
                 <artifactId>gson</artifactId>
                 <version>${gson-version}</version>
             </dependency>
+            
+            <!-- GSON Fire -->
+            <dependency>
+                <groupId>io.gsonfire</groupId>
+                <artifactId>gson-fire</artifactId>
+                <version>${gson-fire-version}</version>
+            </dependency>
+            
+            <!-- JACKSON -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+            
+            <!-- JSON Simple -->
+            <dependency>
+                <groupId>com.googlecode.json-simple</groupId>
+                <artifactId>json-simple</artifactId>
+                <version>${json-simple-version}</version>
+            </dependency>
 
             <!-- Snowball stemmer -->
             <dependency>
@@ -118,6 +149,34 @@
                 <classifier>models</classifier>
             </dependency>
 
+            <!-- JWNL -->
+            <dependency>
+                <groupId>net.sf.jwordnet</groupId>
+                <artifactId>jwnl</artifactId>
+                <version>${jwnl-version}</version>
+            </dependency>
+
+            <!-- NLP Utils -->
+            <dependency>
+                <groupId>se.lth.cs.nlp</groupId>
+                <artifactId>nlputils</artifactId>
+                <version>${nlp-utils-version}</version>
+            </dependency>
+            
+            <!-- Semafor -->
+            <dependency>
+                <groupId>edu.cmu.cs.lti.ark</groupId>
+                <artifactId>Semafor</artifactId>
+                <version>${semafor-version}</version>
+            </dependency>
+            
+            <!-- TreeTagger -->
+            <dependency>
+                <groupId>org.annolab.tt4j</groupId>
+                <artifactId>org.annolab.tt4j</artifactId>
+                <version>${treetagger-version}</version>
+            </dependency>
+        
             <!-- SLF4J -->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -183,6 +242,23 @@
                 <artifactId>log4j</artifactId>
                 <version>${log4j-version}</version>
             </dependency>
+            
+            <!-- Log4j2 -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j2-version}</version>
+            </dependency>
 
             <!-- JUnit -->
             <dependency>
@@ -224,6 +300,35 @@
                 <artifactId>commons-math3</artifactId>
                 <version>${commons-math3-version}</version>
             </dependency>
+            <dependency>
+                <groupId>commons-configuration</groupId>
+                <artifactId>commons-configuration</artifactId>
+                <version>${commons-configuration-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-csv</artifactId>
+                <version>${commons-csv-version}</version>
+            </dependency>
+            
+            <!-- Java Mail -->
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>javax.mail-api</artifactId>
+                <version>${javamail-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>${javamail-version}</version>
+            </dependency>
+            
+            <!-- Cron Utils -->
+            <dependency>
+                <groupId>com.cronutils</groupId>
+                <artifactId>cron-utils</artifactId>
+                <version>${cronutils-version}</version>
+            </dependency>
 
             <!-- Jansi -->
             <dependency>
@@ -246,6 +351,13 @@
                 <version>${jsr305-version}</version>
             </dependency>
 
+            <!-- StreamEx -->
+            <dependency>
+                <groupId>one.util</groupId>
+                <artifactId>streamex</artifactId>
+                <version>${streamex-version}</version>
+            </dependency>
+            
             <!-- Mustache -->
             <dependency>
                 <groupId>com.github.spullara.mustache.java</groupId>
@@ -317,7 +429,24 @@
                 <artifactId>jetty-servlets</artifactId>
                 <version>${jetty-version}</version>
             </dependency>
-
+            
+            <!-- Grizzly -->
+            <dependency>
+                <groupId>org.glassfish.grizzly</groupId>
+                <artifactId>grizzly-framework</artifactId>
+                <version>${grizzly-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.grizzly</groupId>
+                <artifactId>grizzly-http</artifactId>
+                <version>${grizzly-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.grizzly</groupId>
+                <artifactId>grizzly-http-server</artifactId>
+                <version>${grizzly-version}</version>
+            </dependency>
+            
             <!-- Jersey -->
             <dependency>
                 <groupId>org.glassfish.jersey.core</groupId>
@@ -776,7 +905,13 @@
                 <artifactId>jersey-guava</artifactId>
                 <version>${jersey-guava-version}</version>
             </dependency>
-
+            
+            <!-- JENA -->
+            <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-core</artifactId>
+                <version>${jena-version}</version>
+            </dependency>
 
             <!-- SEMARGL JSON-LD -->
             <dependency>
@@ -822,6 +957,204 @@
                 <groupId>org.kie</groupId>
                 <artifactId>kie-api</artifactId>
                 <version>${drools-version}</version>
+            </dependency>
+            
+            <!-- Flink -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-java</artifactId>
+                <version>${flink-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java_2.10</artifactId>
+                <version>${flink-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-clients_2.10</artifactId>
+                <version>${flink-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            
+            <!-- Kafka -->
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka-version}</version>
+            </dependency>
+
+            <!-- Redis -->
+            <dependency>
+                <groupId>biz.paluch.redis</groupId>
+                <artifactId>lettuce</artifactId>
+                <version>${redis-version}</version>
+            </dependency>
+            
+            <!-- Sparkey -->
+            <dependency>
+                <groupId>com.spotify.sparkey</groupId>
+                <artifactId>sparkey</artifactId>
+                <version>${sparkey-version}</version>
+            </dependency>
+
+            <!-- JOOQ -->
+            <dependency>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq</artifactId>
+                <version>${jooq-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-meta</artifactId>
+                <version>${jooq-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen</artifactId>
+                <version>${jooq-version}</version>
+            </dependency>
+            
+            <!-- JOOX -->
+            <dependency>
+                <groupId>org.jooq</groupId>
+                <artifactId>joox</artifactId>
+                <version>${joox-version}</version>
+            </dependency>
+            
+            <!-- JSoup -->
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup-version}</version>
+            </dependency>
+
+            <!-- PostgreSQL -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql-version}</version>
+            </dependency>
+
+            <!-- MySQL -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-version}</version>
+            </dependency>
+                        
+            <!-- Twitter4j -->
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-core</artifactId>
+                <version>${twitter4j-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-stream</artifactId>
+                <version>${twitter4j-version}</version>
+            </dependency>
+
+            <!-- Pellet -->
+            <dependency>
+                <groupId>com.github.ansell.pellet</groupId>
+                <artifactId>pellet-core</artifactId>
+                <version>${pellet-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ansell.pellet</groupId>
+                <artifactId>pellet-datatypes</artifactId>
+                <version>${pellet-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ansell.pellet</groupId>
+                <artifactId>pellet-el</artifactId>
+                <version>${pellet-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ansell.pellet</groupId>
+                <artifactId>pellet-owlapiv3</artifactId>
+                <version>${pellet-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ansell.pellet</groupId>
+                <artifactId>pellet-rules</artifactId>
+                <version>${pellet-version}</version>
+            </dependency>
+            
+            <!-- XML APIS -->
+            <dependency>
+                <groupId>xml-apis</groupId>
+                <artifactId>xml-apis</artifactId>
+                <version>${xml-apis-version}</version>
+            </dependency>
+        
+            <!-- JAXB API -->
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>${jaxb-api-version}</version>
+            </dependency>
+        
+            <!-- Saxon -->
+            <dependency>
+                <groupId>net.sf.saxon</groupId>
+                <artifactId>Saxon-HE</artifactId>
+                <version>${saxon-version}</version>
+            </dependency>
+            
+            <!-- Rome -->
+            <dependency>
+                <groupId>com.rometools</groupId>
+                <artifactId>rome</artifactId>
+                <version>${rome-version}</version>
+            </dependency>
+            
+            <!-- TIKA -->
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-parsers</artifactId>
+                <version>${tika-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>${tika-version}</version>
+            </dependency>
+    
+            <!-- HTMLCleaner -->    
+            <dependency>
+                <groupId>net.sourceforge.htmlcleaner</groupId>
+                <artifactId>htmlcleaner</artifactId>
+                <version>${htmlcleaner-version}</version>
+            </dependency>
+        
+            <!-- Unbescape -->
+            <dependency>
+                <groupId>org.unbescape</groupId>
+                <artifactId>unbescape</artifactId>
+                <version>${unbescape-version}</version>
             </dependency>
 
         </dependencies>
@@ -1016,13 +1349,13 @@
                     <version>${javadoc-plugin-version}</version>
                     <configuration>
                         <links>
-                            <link>http://java.sun.com/javase/6/docs/api/</link>
+                            <link>http://java.sun.com/javase/8/docs/api/</link>
                             <link>http://junit.sourceforge.net/javadoc/</link>
-                            <link>http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/</link>
-                            <!--<link>http://openrdf.callimachus.net/sesame/2.7/apidocs/</link>-->
-                            <link>http://hadoop.apache.org/docs/r1.0.4/api/</link>
-                            <link>http://hbase.apache.org/0.94/apidocs/</link>
-                            <link>http://commons.apache.org/proper/commons-configuration/apidocs/</link>
+                            <link>http://google.github.io/guava/releases/${google-guava-version}/api/docs/</link>
+                            <link>http://docs.rdf4j.org/javadoc/latest/</link>
+                            <!-- <link>http://hadoop.apache.org/docs/r1.0.4/api/</link> -->
+                            <!-- <link>http://hbase.apache.org/0.94/apidocs/</link> -->
+                            <!-- <link>http://commons.apache.org/proper/commons-configuration/apidocs/</link> -->
                             <link>http://www.slf4j.org/apidocs/</link>
                         </links>
                         <tags>
@@ -1184,6 +1517,36 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
                     <version>${shade-plugin-version}</version>
+                    <configuration>
+                        <shadedArtifactAttached>true</shadedArtifactAttached>
+                        <shadedClassifierName>onejar</shadedClassifierName>
+                        <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>.tsv</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>.properties</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/services/org.eclipse.rdf4j.rio.RDFParserFactory</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/services/org.eclipse.rdf4j.rio.RDFWriterFactory</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/services/org.eclipse.rdf4j.rio.LanguageHandler</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/services/org.eclipse.rdf4j.rio.DatatypeHandler</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/services/java.nio.file.spi.FileTypeDetector</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/services/org.eclipse.rdf4j.query.parser.QueryParserFactory</resource>
+                            </transformer>
+                        </transformers>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.enunciate</groupId>
@@ -1630,7 +1993,9 @@
         <!-- newer version with incompatible API is 3.5.2 -->
         <snowball-version>1.0</snowball-version>
         <log4j-version>1.2.17</log4j-version>
+        <log4j2-version>2.6.1</log4j2-version>
         <google-guava-version>20.0-rc1</google-guava-version>
+        <streamex-version>0.6.5</streamex-version>
         <commons-cli-version>1.3.1</commons-cli-version>
         <commons-io-version>2.4</commons-io-version>
         <junit-version>4.12</junit-version>
@@ -1641,11 +2006,14 @@
         <liblinear-version>1.95</liblinear-version>
         <commons-lang-version>2.6</commons-lang-version>
         <commons-lang3-version>3.4</commons-lang3-version>
+        <commons-configuration-version>1.10</commons-configuration-version>
+        <commons-csv-version>1.2</commons-csv-version>
         <slf4j-version>1.7.12</slf4j-version>
         <guessencoding-version>1.4</guessencoding-version>
         <jdom2-version>2.0.6</jdom2-version>
-        <rdf4j-version>2.1.2</rdf4j-version>
         <sesame-version>2.8.6</sesame-version>
+        <rdf4j-version>2.2.1</rdf4j-version>
+        <jena-version>2.13.0</jena-version>
         <semargl-jsonld-version>0.6.1</semargl-jsonld-version>
         <drools-version>6.3.0.Final</drools-version>
         <groovy-version>2.4.5</groovy-version>
@@ -1654,6 +2022,7 @@
         <virtuoso-sesame2-version>2015-01-26</virtuoso-sesame2-version>
         <hikari-version>2.3.10</hikari-version>
         <jetty-version>9.3.4.RC0</jetty-version>
+        <grizzly-version>2.3.21</grizzly-version>
         <!-- was 9.3.3.v20150827 - update problems due to http://jira.qos.ch/browse/LOGBACK-1052 -->
         <jaxrs-version>2.0.1</jaxrs-version>
         <servlet-version>3.1.0</servlet-version>
@@ -1663,11 +2032,39 @@
         <paranamer-version>2.8</paranamer-version>
         <jaxen-version>1.1.6</jaxen-version>
         <cors-filter-version>1.0.1</cors-filter-version>
-        <httpclient-version>4.5.1</httpclient-version>
+        <httpclient-version>4.5.2</httpclient-version>
         <httpcore-version>4.4.3</httpcore-version>
         <jolokia-version>1.3.1</jolokia-version>
         <jersey-guava-version>2.17</jersey-guava-version>
         <gson-version>2.8.0</gson-version>
+        <jackson-version>2.6.3</jackson-version>
+        <json-simple-version>1.1.1</json-simple-version>
+        
+        <flink-version>1.2.0</flink-version>
+        <jooq-version>3.8.4</jooq-version>
+        <joox-version>1.3.0</joox-version>
+        <postgresql-version>42.0.0.jre7</postgresql-version>
+        <mysql-connector-version>5.1.38</mysql-connector-version>
+        <twitter4j-version>4.0.5</twitter4j-version>
+        <redis-version>4.2.2.Final</redis-version>
+        <sparkey-version>2.1.3</sparkey-version>
+        <jsoup-version>1.8.3</jsoup-version>
+        <jwnl-version>1.4_rc3</jwnl-version>
+        <pellet-version>2.3.6-ansell</pellet-version>
+        <saxon-version>9.5.1-6</saxon-version>
+        <xml-apis-version>1.4.01</xml-apis-version>
+        <jaxb-api-version>2.2.7</jaxb-api-version>
+        <nlp-utils-version>1.0</nlp-utils-version>
+        <semafor-version>3.0-alpha-04</semafor-version>
+        <treetagger-version>1.2.1</treetagger-version>
+        <tika-version>1.12</tika-version>
+        <htmlcleaner-version>2.16</htmlcleaner-version>
+        <unbescape-version>1.1.3.RELEASE</unbescape-version>
+        <rome-version>1.7.0</rome-version>
+        <gson-fire-version>1.7.2</gson-fire-version>
+        <javamail-version>1.5.6</javamail-version>
+        <cronutils-version>5.0.4</cronutils-version>
+        <kafka-version>0.10.1.0</kafka-version>
 
         <site.topbar>
             <![CDATA[
