@@ -60,13 +60,15 @@
         </license>
     </licenses>
 
+    <!--
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
-
+    -->
+    
     <scm>
         <connection>scm:git:ssh://git@github.com/dkmfbk/parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/dkmfbk/parent.git</developerConnection>
@@ -521,6 +523,14 @@
                 </configuration>
             </plugin>
         </plugins>
+      
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>${webdav-plugin-version}</version>
+            </extension>
+        </extensions>
     </build>
 
     <profiles>
@@ -590,23 +600,6 @@
                         </executions>
                     </plugin>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
                         <executions>
@@ -624,6 +617,55 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        
+        <!-- Profile for deployment on OSSRH (Maven Central) - Enable manually with -ossrh -->
+        <profile>
+            <id>ossrh</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+           </distributionManagement>
+           <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Profile for deployment on FM Repository - Enable manually with -fm -->
+        <profile>
+            <id>fm</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>fmrepo</id>
+                    <url>dav:https://maven.futuro.media/maven2/</url>
+                </repository>
+           </distributionManagement>
         </profile>
 
         <!-- Profile for generating jar with test classes.
@@ -926,6 +968,7 @@
         <surefire-report-plugin-version>2.19</surefire-report-plugin-version>
         <taglist-plugin-version>2.4</taglist-plugin-version>
         <versions-plugin-version>2.2</versions-plugin-version>
+        <webdav-plugin-version>2.12</webdav-plugin-version>
 
         <reflow-skin-version>1.1.1</reflow-skin-version>
         <reflow-skin-velocity-version>1.7</reflow-skin-velocity-version>
