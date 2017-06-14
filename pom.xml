@@ -660,6 +660,12 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
+            <repositories>
+                <repository>
+                    <id>fmrepo-open</id>
+                    <url>https://maven.futuro.media/maven2</url>
+                </repository>
+            </repositories>
             <distributionManagement>
                 <repository>
                     <id>fmrepo</id>
