@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>eu.fbk.parent</groupId>
@@ -14,7 +15,7 @@
 
     <organization>
         <name>FBK</name>
-        <url>http://www.fbk.eu</url>
+        <url>http://www.fbk.eu/</url>
     </organization>
 
     <developers>
@@ -70,9 +71,9 @@
     -->
     
     <scm>
-        <connection>scm:git:ssh://git@github.com/dkmfbk/parent.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/dkmfbk/parent.git</developerConnection>
-        <url>https://github.com/dkmfbk/parent</url>
+        <connection>scm:git:ssh://git@github.com/fbk/parent.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/fbk/parent.git</developerConnection>
+        <url>https://github.com/fbk/parent</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -145,6 +146,19 @@
                     </configuration>
                 </plugin>
                 <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>${git-commit-id-plugin-version}</version>
+                    <configuration>
+                        <verbose>false</verbose>
+                        <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
+                        <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+                        <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                        <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>${clean-plugin-version}</version>
@@ -175,6 +189,7 @@
                         <optimize>false</optimize>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
+                        <parameters>true</parameters>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -186,6 +201,27 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${jar-plugin-version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${war-plugin-version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <mainClass>${start-class}</mainClass>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -270,13 +306,10 @@
                     <version>${javadoc-plugin-version}</version>
                     <configuration>
                         <links>
-                            <link>http://java.sun.com/javase/8/docs/api/</link>
-                            <link>http://junit.sourceforge.net/javadoc/</link>
-                            <link>http://google.github.io/guava/releases/${google-guava-version}/api/docs/</link>
+                            <link>https://docs.oracle.com/javase/8/docs/api/</link>
+                            <link>http://junit.org/junit4/javadoc/latest/</link>
+                            <link>https://google.github.io/guava/releases/23.5-jre/api/docs/</link>
                             <link>http://docs.rdf4j.org/javadoc/latest/</link>
-                            <!-- <link>http://hadoop.apache.org/docs/r1.0.4/api/</link> -->
-                            <!-- <link>http://hbase.apache.org/0.94/apidocs/</link> -->
-                            <!-- <link>http://commons.apache.org/proper/commons-configuration/apidocs/</link> -->
                             <link>http://www.slf4j.org/apidocs/</link>
                         </links>
                         <tags>
@@ -464,6 +497,13 @@
                             <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                 <resource>META-INF/services/org.eclipse.rdf4j.query.parser.QueryParserFactory</resource>
                             </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/spring.handlers</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/spring.schemas</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                         </transformers>
                     </configuration>
                 </plugin>
@@ -574,6 +614,17 @@
             <build>
                 <plugins>
                     <plugin>
+                        <groupId>pl.project13.maven</groupId>
+                        <artifactId>git-commit-id-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>revision</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
                         <executions>
@@ -619,7 +670,7 @@
             </build>
         </profile>
         
-        <!-- Profile for deployment on OSSRH (Maven Central) - Enable manually with -ossrh -->
+        <!-- Profile for deployment on OSSRH (Maven Central) - Enable manually with -Possrh -->
         <profile>
             <id>ossrh</id>
             <activation>
@@ -652,26 +703,6 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-
-        <!-- Profile for deployment on FM Repository - Enable manually with -fm -->
-        <profile>
-            <id>fm</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>fmrepo-open</id>
-                    <url>https://maven.futuro.media/maven2</url>
-                </repository>
-            </repositories>
-            <distributionManagement>
-                <repository>
-                    <id>fmrepo</id>
-                    <url>dav:https://maven.futuro.media/maven2/</url>
-                </repository>
-           </distributionManagement>
         </profile>
 
         <!-- Profile for generating jar with test classes.
@@ -945,40 +976,43 @@
         <java-target-version>1.8</java-target-version>
 
         <antrun-plugin-version>1.8</antrun-plugin-version>
-        <assembly-plugin-version>2.6</assembly-plugin-version>
+        <assembly-plugin-version>3.1.0</assembly-plugin-version>
         <changelog-plugin-version>2.3</changelog-plugin-version>
         <checkstyle-plugin-version>2.17</checkstyle-plugin-version>
         <clean-plugin-version>3.0.0</clean-plugin-version>
-        <compiler-plugin-version>3.3</compiler-plugin-version>
+        <!-- <cobertura-plugin.version>2.7</cobertura-plugin.version> -->
+        <compiler-plugin-version>3.7.0</compiler-plugin-version>
         <copy-rename-plugin-version>1.0.1</copy-rename-plugin-version>
-        <dependency-plugin-version>2.10</dependency-plugin-version>
+        <dependency-plugin-version>3.0.2</dependency-plugin-version>
         <deploy-plugin-version>2.8.2</deploy-plugin-version>
         <eclipse-plugin-version>2.10</eclipse-plugin-version>
         <enunciate-plugin-version>1.31</enunciate-plugin-version>
-        <findbugs-plugin-version>3.0.4</findbugs-plugin-version>
+        <findbugs-plugin-version>3.0.5</findbugs-plugin-version>
+        <git-commit-id-plugin-version>2.2.3</git-commit-id-plugin-version>
         <gpg-plugin-version>1.6</gpg-plugin-version>
         <install-plugin-version>2.5.2</install-plugin-version>
-        <jar-plugin-version>2.6</jar-plugin-version>
-        <javadoc-plugin-version>2.10.3</javadoc-plugin-version>
+        <jar-plugin-version>3.0.2</jar-plugin-version>
+        <javadoc-plugin-version>3.0.0-M1</javadoc-plugin-version>
         <jdepend-plugin-version>2.0</jdepend-plugin-version>
         <jxr-plugin-version>2.5</jxr-plugin-version>
-        <license-plugin-version>1.8</license-plugin-version>
-        <nexus-staging-plugin-version>1.6.6</nexus-staging-plugin-version>
-        <pmd-plugin-version>3.5</pmd-plugin-version>
-        <project-info-plugin-version>2.8.1</project-info-plugin-version>
+        <license-plugin-version>1.14</license-plugin-version>
+        <nexus-staging-plugin-version>1.6.8</nexus-staging-plugin-version>
+        <pmd-plugin-version>3.8</pmd-plugin-version>
+        <project-info-plugin-version>2.9</project-info-plugin-version>
         <release-plugin-version>2.5.3</release-plugin-version>
-        <shade-plugin-version>2.4.2</shade-plugin-version>
-        <site-plugin-version>3.4</site-plugin-version>
-        <source-plugin-version>2.4</source-plugin-version>
-        <surefire-plugin-version>2.19</surefire-plugin-version>
-        <surefire-report-plugin-version>2.19</surefire-report-plugin-version>
+        <shade-plugin-version>3.1.0</shade-plugin-version>
+        <site-plugin-version>3.6</site-plugin-version>
+        <source-plugin-version>3.0.1</source-plugin-version>
+        <surefire-plugin-version>2.20.1</surefire-plugin-version>
+        <surefire-report-plugin-version>2.20.1</surefire-report-plugin-version>
         <taglist-plugin-version>2.4</taglist-plugin-version>
-        <versions-plugin-version>2.2</versions-plugin-version>
-        <webdav-plugin-version>2.12</webdav-plugin-version>
-
+        <versions-plugin-version>2.5</versions-plugin-version>
+        <war-plugin-version>3.2.0</war-plugin-version>
+        <webdav-plugin-version>3.0.0</webdav-plugin-version>
+                      
         <reflow-skin-version>1.1.1</reflow-skin-version>
         <reflow-skin-velocity-version>1.7</reflow-skin-velocity-version>
-        <reflow-skin-doxia-version>1.6</reflow-skin-doxia-version>
+        <reflow-skin-doxia-version>1.7</reflow-skin-doxia-version>
 
         <skipJavadoc>false</skipJavadoc>
         <skipGpg>false</skipGpg>
