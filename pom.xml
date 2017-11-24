@@ -1001,7 +1001,7 @@
         <project-info-plugin-version>2.9</project-info-plugin-version>
         <release-plugin-version>2.5.3</release-plugin-version>
         <shade-plugin-version>3.1.0</shade-plugin-version>
-        <site-plugin-version>3.6</site-plugin-version>
+        <site-plugin-version>3.4</site-plugin-version> <!-- version 3.6 available but incompatible with reflow skin -->
         <source-plugin-version>3.0.1</source-plugin-version>
         <surefire-plugin-version>2.20.1</surefire-plugin-version>
         <surefire-report-plugin-version>2.20.1</surefire-report-plugin-version>
@@ -1009,10 +1009,10 @@
         <versions-plugin-version>2.5</versions-plugin-version>
         <war-plugin-version>3.2.0</war-plugin-version>
         <webdav-plugin-version>3.0.0</webdav-plugin-version>
-                      
+
         <reflow-skin-version>1.1.1</reflow-skin-version>
         <reflow-skin-velocity-version>1.7</reflow-skin-velocity-version>
-        <reflow-skin-doxia-version>1.7</reflow-skin-doxia-version>
+        <reflow-skin-doxia-version>1.6</reflow-skin-doxia-version> <!-- version 1.7 available but uncompatible with site 3.4 -->
 
         <skipJavadoc>false</skipJavadoc>
         <skipGpg>false</skipGpg>
