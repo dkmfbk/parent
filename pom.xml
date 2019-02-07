@@ -1,1028 +1,1074 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-         
-    <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <groupId>eu.fbk.parent</groupId>
-    <artifactId>parent</artifactId>
-    <version>2.2-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <inceptionYear>2016</inceptionYear>
+	<modelVersion>4.0.0</modelVersion>
 
-    <name>parent</name>
-    <description>A set of common rules for development in FBK</description>
-    <url>https://github.com/fbk/parent</url>
+	<groupId>eu.fbk.parent</groupId>
+	<artifactId>parent</artifactId>
+	<version>2.2-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<inceptionYear>2016</inceptionYear>
 
-    <organization>
-        <name>FBK</name>
-        <url>http://www.fbk.eu/</url>
-    </organization>
+	<name>parent</name>
+	<description>A set of common rules for development in FBK</description>
+	<url>https://github.com/fbk/parent</url>
 
-    <developers>
-        <developer>
-            <id>corcoglio</id>
-            <name>Francesco Corcoglioniti</name>
-            <email>corcoglio@fbk.eu</email>
-            <roles>
-                <role>Developer</role>
-            </roles>
-            <timezone>+1</timezone>
-            <properties>
-                <picUrl>http://rdfpro.fbk.eu/images/team/corcoglio.jpg</picUrl>
-            </properties>
-        </developer>
-        <developer>
-            <id>aprosio</id>
-            <name>Alessio Palmero Aprosio</name>
-            <email>aprosio@fbk.eu</email>
-            <url>https://dkm.fbk.eu/people/profile/aprosio</url>
-            <roles>
-                <role>Developer</role>
-            </roles>
-            <timezone>+1</timezone>
-            <properties>
-                <picUrl>http://rdfpro.fbk.eu/images/team/aprosio.jpg</picUrl>
-            </properties>
-        </developer>
-    </developers>
+	<organization>
+		<name>FBK</name>
+		<url>http://www.fbk.eu/</url>
+	</organization>
 
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>fbk-repo</id>-->
-            <!--<url>https://raw.githubusercontent.com/fbk/mvn-repo/master/releases</url>-->
-        <!--</repository>-->
-    <!--</repositories>-->
+	<developers>
+		<developer>
+			<id>corcoglio</id>
+			<name>Francesco Corcoglioniti</name>
+			<email>corcoglio@fbk.eu</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>+1</timezone>
+			<properties>
+				<picUrl>https://my.fbk.eu/fbk-api/v2/picture/corcoglio</picUrl>
+			</properties>
+		</developer>
+		<developer>
+			<id>aprosio</id>
+			<name>Alessio Palmero Aprosio</name>
+			<email>aprosio@fbk.eu</email>
+			<url>https://dkm.fbk.eu/people/profile/aprosio</url>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>+1</timezone>
+			<properties>
+				<picUrl>http://rdfpro.fbk.eu/images/team/aprosio.jpg</picUrl>
+			</properties>
+		</developer>
+	</developers>
 
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+	<!--<repositories> -->
+	<!--<repository> -->
+	<!--<id>fbk-repo</id> -->
+	<!--<url>https://raw.githubusercontent.com/fbk/mvn-repo/master/releases</url> -->
+	<!--</repository> -->
+	<!--</repositories> -->
 
-    <!--
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-    -->
-    
-    <scm>
-        <connection>scm:git:ssh://git@github.com/fbk/parent.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/fbk/parent.git</developerConnection>
-        <url>https://github.com/fbk/parent</url>
-        <tag>HEAD</tag>
-    </scm>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-    <dependencyManagement>
-        <dependencies>
-        </dependencies>
-    </dependencyManagement>
+	<!-- <distributionManagement> <snapshotRepository> <id>ossrh</id> <url>https://oss.sonatype.org/content/repositories/snapshots</url> 
+		</snapshotRepository> </distributionManagement> -->
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>license-maven-plugin</artifactId>
-                    <version>${license-plugin-version}</version>
-                    <configuration>
-                        <useMissingFile>true</useMissingFile>
-                        <!--<licenseResolver>${project.baseUri}${parent-path}/src/license</licenseResolver>-->
-                        <fileTemplate>${project.basedir}${parent-path}/src/license/template.ftl</fileTemplate>
-                        <outputDirectory>${project.basedir}</outputDirectory>
-                        <licenseMerges>
-                            <licenseMerge>
-                                GNU General Public License (GPL) version 3|
-                                GNU General Public License Version 3
-                            </licenseMerge>
-                            <licenseMerge>Apache Software License, Version 2.0|Apache Software Licenses|
-                                Similar to Apache License but with the acknowledgment clause removed|
-                                Apache License Version 2.0|Apache Public License 2.0|
-                                The Apache Software License, Version 2.0|Apache 2|Apache License|
-                                Apache Software License - Version 2.0|Apache License, Version 2.0|
-                                Apache License 2.0|Unknown license|http://jaxen.codehaus.org/license.html
-                            </licenseMerge>
-                            <licenseMerge>GNU Lesser General Public License|LGPL 2.1|
-                                GNU Lesser General Public License (LGPL), Version 2.1|
-                                GNU Lesser General Public License Version 2.1|
-                                The GNU Lesser General Public License, Version 2.1|
-                                GNU LESSER GENERAL PUBLIC LICENSE|LGPL|
-                                GNU Lesser General Public License Version 2.1, February 1999|
-                                GNU Lesser General Public License 2.1|
-                                GNU Lesser General Public License, Version 2.1|
-                                GNU Lesser General Public License - v 2.1 or later
-                            </licenseMerge>
-                            <licenseMerge>Eclipse Public License - Version 1.0|Eclipse Public License 1.0|
-                                Eclipse Public License - v 1.0|Eclipse Public License v1.0|
-                                Eclipse Distribution License - v 1.0
-                            </licenseMerge>
-                            <licenseMerge>Public Domain|Public Domain (Creative Commons CC0)</licenseMerge>
-                            <licenseMerge>BSD 2-Clause License|The BSD 2-Clause License</licenseMerge>
-                            <licenseMerge>BSD License|BSD|New BSD License|New BSD license|BSD licence|
-                                BSD style|Aduna BSD license|BSD 3-Clause License|BSD 2-Clause License|The BSD License
-                            </licenseMerge>
-                            <licenseMerge>JSON License|The JSON License</licenseMerge>
-                            <licenseMerge>MIT License|The MIT License</licenseMerge>
-                            <licenseMerge>SAX License|The SAX License</licenseMerge>
-                            <licenseMerge>W3C License|The W3C License</licenseMerge>
-                            <licenseMerge>Common Public License|Common Public License Version 1.0|
-                                Common Public License - v 1.0
-                            </licenseMerge>
-                            <licenseMerge>CDDL + GPLv2|CDDL+GPL License|CDDL+GPL|
-                                Dual license consisting of the CDDL v1.1 and GPL v2
-                            </licenseMerge>
-                            <licenseMerge>CDDL 1.0|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0|
-                                Common Development and Distribution License (CDDL) v1.0
-                            </licenseMerge>
-                            <licenseMerge>Mozilla Public License Version 1.1|MPL 1.1</licenseMerge>
-                            <licenseMerge>GPLv2 with classpath exception|GPL2 w/ CPE|
-                                GNU General Public License Version 2|The GNU General Public License, Version 2
-                            </licenseMerge>
-                        </licenseMerges>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>pl.project13.maven</groupId>
-                    <artifactId>git-commit-id-plugin</artifactId>
-                    <version>${git-commit-id-plugin-version}</version>
-                    <configuration>
-                        <verbose>false</verbose>
-                        <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
-                        <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
-                        <failOnNoGitDirectory>false</failOnNoGitDirectory>
-                        <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>${clean-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${deploy-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>${install-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>${release-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${compiler-plugin-version}</version>
-                    <configuration>
-                        <source>${java-source-version}</source>
-                        <target>${java-target-version}</target>
-                        <debug>true</debug>
-                        <optimize>false</optimize>
-                        <showDeprecation>true</showDeprecation>
-                        <showWarnings>true</showWarnings>
-                        <parameters>true</parameters>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${dependency-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>${jar-plugin-version}</version>
-                    <configuration>
-                        <archive>
-                            <manifest>
-                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                            </manifest>
-                        </archive>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>${war-plugin-version}</version>
-                    <configuration>
-                        <archive>
-                            <manifest>
-                                <mainClass>${start-class}</mainClass>
-                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            </manifest>
-                        </archive>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>${source-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${assembly-plugin-version}</version>
-                    <configuration>
-                        <!-- avoid warnings for paths longer than 100 chars -->
-                        <tarLongFileMode>gnu</tarLongFileMode>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-eclipse-plugin</artifactId>
-                    <version>${eclipse-plugin-version}</version>
-                    <configuration>
-                        <downloadSources>true</downloadSources>
-                        <downloadJavadocs>true</downloadJavadocs>
-                        <useProjectReferences>true</useProjectReferences>
-                        <!--<additionalBuildcommands>
-                          <buildcommand>net.sf.eclipsecs.core.CheckstyleBuilder</buildcommand>
-                        </additionalBuildcommands>
-                        <additionalProjectnatures>
-                          <projectnature>net.sf.eclipsecs.core.CheckstyleNature</projectnature>
-                        </additionalProjectnatures>-->
-                        <!--<failOnError>false</failOnError>-->
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${site-plugin-version}</version>
-                    <configuration>
-                        <locales>en</locales>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>lt.velykis.maven.skins</groupId>
-                            <artifactId>reflow-velocity-tools</artifactId>
-                            <version>${reflow-skin-version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.apache.velocity</groupId>
-                            <artifactId>velocity</artifactId>
-                            <version>${reflow-skin-velocity-version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.apache.maven.doxia</groupId>
-                            <artifactId>doxia-module-markdown</artifactId>
-                            <version>${reflow-skin-doxia-version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.apache.maven.doxia</groupId>
-                            <artifactId>doxia-module-xhtml</artifactId>
-                            <version>${reflow-skin-doxia-version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${surefire-plugin-version}</version>
-                    <configuration>
-                        <argLine>-enableassertions</argLine>
-                        <includes>
-                            <include>**/*Test.java</include>
-                        </includes>
-                        <excludes>
-                            <exclude>**/Abstract*Test.java</exclude>
-                        </excludes>
-                        <testFailureIgnore>true</testFailureIgnore>
-                        <forkedProcessTimeoutInSeconds>10</forkedProcessTimeoutInSeconds>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${javadoc-plugin-version}</version>
-                    <configuration>
-                        <links>
-                            <link>https://docs.oracle.com/javase/8/docs/api/</link>
-                            <link>http://junit.org/junit4/javadoc/latest/</link>
-                            <link>https://google.github.io/guava/releases/23.5-jre/api/docs/</link>
-                            <link>http://docs.rdf4j.org/javadoc/latest/</link>
-                            <link>http://www.slf4j.org/apidocs/</link>
-                        </links>
-                        <tags>
-                            <tag>
-                                <name>apiviz.uses</name>
-                                <placement>X</placement>
-                            </tag>
-                            <tag>
-                                <name>apiviz.has</name>
-                                <placement>X</placement>
-                            </tag>
-                            <tag>
-                                <name>apiviz.owns</name>
-                                <placement>X</placement>
-                            </tag>
-                            <tag>
-                                <name>apiviz.exclude</name>
-                                <placement>X</placement>
-                            </tag>
-                            <tag>
-                                <name>apiviz.landmark</name>
-                                <placement>X</placement>
-                            </tag>
-                            <tag>
-                                <name>apiviz.stereotype</name>
-                                <placement>X</placement>
-                            </tag>
-                        </tags>
-                        <show>protected</show>
-                        <quiet>true</quiet>
-                        <failOnError>false</failOnError>
-                        <additionalparam>-Xdoclint:none</additionalparam>
-                        <skip>${skipJavadoc}</skip>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jxr-plugin</artifactId>
-                    <version>${jxr-plugin-version}</version>
-                    <configuration>
-                        <linkJavadoc>false</linkJavadoc>
-                        <stylesheet>${basedir}${parent-path}/src/site/xref.css</stylesheet>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>jdepend-maven-plugin</artifactId>
-                    <version>${jdepend-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>versions-maven-plugin</artifactId>
-                    <version>${versions-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${checkstyle-plugin-version}</version>
-                    <configuration>
-                        <enableRSS>true</enableRSS>
-                        <enableRulesSummary>false</enableRulesSummary>
-                        <enableFilesSummary>false</enableFilesSummary>
-                        <enableSeveritySummary>true</enableSeveritySummary>
-                        <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                        <configLocation>file:///${basedir}${parent-path}/src/settings/checkstyle.xml</configLocation>
-                        <linkXRef>true</linkXRef>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-report-plugin</artifactId>
-                    <version>${surefire-report-plugin-version}</version>
-                    <configuration>
-                        <aggregate>true</aggregate>
-                        <alwaysGenerateSurefireReport>true</alwaysGenerateSurefireReport>
-                        <linkXRef>true</linkXRef>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <version>${pmd-plugin-version}</version>
-                    <configuration>
-                        <aggregate>true</aggregate>
-                        <targetJdk>${java-source-version}</targetJdk>
-                        <linkXref>true</linkXref>
-                        <sourceEncoding>UTF-8</sourceEncoding>
-                        <rulesets>
-                            <ruleset>file:///${basedir}${parent-path}/src/settings/pmd.xml</ruleset>
-                        </rulesets>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${findbugs-plugin-version}</version>
-                    <inherited>false</inherited>
-                    <configuration>
-                        <threshold>Normal</threshold>
-                        <effort>Default</effort>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>taglist-maven-plugin</artifactId>
-                    <version>${taglist-plugin-version}</version>
-                    <configuration>
-                        <tagListOptions>
-                            <tagClasses>
-                                <tagClass>
-                                    <displayName>Problems to fix</displayName>
-                                    <tags>
-                                        <tag>
-                                            <matchString>FIXME</matchString>
-                                            <matchType>ignoreCase</matchType>
-                                        </tag>
-                                    </tags>
-                                </tagClass>
-                                <tagClass>
-                                    <displayName>Functionalities to implement</displayName>
-                                    <tags>
-                                        <tag>
-                                            <matchString>TODO</matchString>
-                                            <matchType>ignoreCase</matchType>
-                                        </tag>
-                                    </tags>
-                                </tagClass>
-                                <tagClass>
-                                    <displayName>Implementation notes</displayName>
-                                    <tags>
-                                        <tag>
-                                            <matchString>XXX</matchString>
-                                            <matchType>ignoreCase</matchType>
-                                        </tag>
-                                    </tags>
-                                </tagClass>
-                            </tagClasses>
-                        </tagListOptions>
-                        <multiLineComments>true</multiLineComments>
-                        <sourceDirectory>${basedir}</sourceDirectory>
-                        <showEmptyDetails>true</showEmptyDetails>
-                        <emptyComments>true</emptyComments>
-                        <aggregate>true</aggregate>
-                        <linkXRef>true</linkXRef>
-                        <xrefLocation>${project.reporting.outputDirectory}/xref</xrefLocation>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-changelog-plugin</artifactId>
-                    <version>${changelog-plugin-version}</version>
-                    <configuration>
-                        <type>range</type>
-                        <range>90</range>
-                        <!-- last 90 days -->
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-shade-plugin</artifactId>
-                    <version>${shade-plugin-version}</version>
-                    <configuration>
-                        <transformers>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>.tsv</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>.properties</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>META-INF/services/org.eclipse.rdf4j.rio.RDFParserFactory</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>META-INF/services/org.eclipse.rdf4j.rio.RDFWriterFactory</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>META-INF/services/org.eclipse.rdf4j.rio.LanguageHandler</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>META-INF/services/org.eclipse.rdf4j.rio.DatatypeHandler</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>META-INF/services/java.nio.file.spi.FileTypeDetector</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>META-INF/services/org.eclipse.rdf4j.query.parser.QueryParserFactory</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>META-INF/spring.handlers</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>META-INF/spring.schemas</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                        </transformers>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.enunciate</groupId>
-                    <artifactId>maven-enunciate-plugin</artifactId>
-                    <version>${enunciate-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>${nexus-staging-plugin-version}</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>com.coderplus.maven.plugins</groupId>
-                    <artifactId>copy-rename-maven-plugin</artifactId>
-                    <version>${copy-rename-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>${gpg-plugin-version}</version>
-                    <configuration>
-                        <skip>${skipGpg}</skip>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>${project-info-plugin-version}</version>
-                    <configuration>
-                        <!-- takes too long to generate... -->
-                        <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-antrun-plugin</artifactId>
-                    <version>${antrun-plugin-version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+	<scm>
+		<connection>scm:git:ssh://git@github.com/fbk/parent.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/fbk/parent.git</developerConnection>
+		<url>https://github.com/fbk/parent</url>
+		<tag>HEAD</tag>
+	</scm>
 
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <inherited>false</inherited>
-                <configuration>
-                    <licenseName>apache_v2</licenseName>
-                </configuration>
-            </plugin>
-        </plugins>
-      
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav-jackrabbit</artifactId>
-                <version>${webdav-plugin-version}</version>
-            </extension>
-        </extensions>
-    </build>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<version>${license-plugin-version}</version>
+					<configuration>
+						<useMissingFile>true</useMissingFile>
+						<!--<licenseResolver>${project.baseUri}${parent-path}/src/license</licenseResolver> -->
+						<fileTemplate>${project.basedir}${parent-path}/src/license/template.ftl</fileTemplate>
+						<outputDirectory>${project.basedir}</outputDirectory>
+						<licenseMerges>
+							<licenseMerge><![CDATA[
+								GNU General Public License (GPL) version 3 |
+								GNU General Public License Version 3
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								Apache Software License, Version 2.0 |
+								Apache Software Licenses |
+								Similar to Apache License but with the acknowledgment clause removed |
+								Apache License Version 2.0 |
+								Apache Public License 2.0 |
+								The Apache Software	License, Version 2.0 |
+								Apache 2 |
+								Apache License |
+								Apache Software License - Version 2.0 |
+								Apache License, Version 2.0 |
+								Apache License 2.0 |
+								Unknown license |
+								http://jaxen.codehaus.org/license.html
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								GNU Lesser General Public License |
+								LGPL 2.1 |
+								GNU Lesser General Public License (LGPL), Version 2.1 |
+								GNU Lesser General Public License Version 2.1 |
+								The GNU Lesser General Public License, Version 2.1 |
+								GNU LESSER GENERAL PUBLIC LICENSE |
+								LGPL |
+								GNU Lesser General Public License Version 2.1, February 1999 |
+								GNU Lesser General Public License 2.1 |
+								GNU Lesser General Public License, Version 2.1 |
+								GNU	Lesser General Public License - v 2.1 or later
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								Eclipse Public License - Version 1.0 |
+								Eclipse Public License 1.0 |
+								Eclipse Public License - v 1.0 | 
+								Eclipse Public License v1.0 |
+								Eclipse Distribution License - v 1.0
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								Public Domain |
+								Public Domain (Creative Commons CC0)
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								BSD 2-Clause License |
+								The BSD 2-Clause License
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								BSD License |
+								BSD | 
+								New BSD License |
+								New BSD license |
+								BSD	licence |
+								BSD style |
+								Aduna BSD license |
+								BSD 3-Clause License |
+								BSD	2-Clause License |
+								The BSD License
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								JSON License |
+								The JSON License
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								MIT License |
+								The MIT License
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								SAX License |
+								The SAX License
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								W3C License |
+								The W3C License
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								Common Public License |
+								Common Public License Version 1.0 |
+								Common Public License -	v 1.0
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								CDDL + GPLv2 |
+								CDDL+GPL License |
+								CDDL+GPL |
+								Dual license consisting of the CDDL v1.1 and GPL v2
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								CDDL 1.0 |
+								COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0 |
+								Common Development and Distribution License (CDDL) v1.0
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								Mozilla Public License Version 1.1 |
+								MPL 1.1
+							]]></licenseMerge>
+							<licenseMerge><![CDATA[
+								GPLv2 with classpath exception |
+								GPL2 w/ CPE |
+								GNU General Public License Version 2 |
+								The GNU General Public License,	Version 2
+							]]></licenseMerge>
+						</licenseMerges>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>pl.project13.maven</groupId>
+					<artifactId>git-commit-id-plugin</artifactId>
+					<version>${git-commit-id-plugin-version}</version>
+					<configuration>
+						<verbose>false</verbose>
+						<dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
+						<generateGitPropertiesFile>true</generateGitPropertiesFile>
+						<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+						<failOnNoGitDirectory>false</failOnNoGitDirectory>
+						<failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${clean-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>${deploy-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>${install-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${release-plugin-version}</version>
+					<configuration>
+						<tagNameFormat>v@{version}</tagNameFormat>
+						<pushChanges>false</pushChanges>
+						<localCheckout>true</localCheckout>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${compiler-plugin-version}</version>
+					<configuration>
+						<source>${java-source-version}</source>
+						<target>${java-target-version}</target>
+						<debug>true</debug>
+						<optimize>false</optimize>
+						<showDeprecation>true</showDeprecation>
+						<showWarnings>true</showWarnings>
+						<parameters>true</parameters>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.scm</groupId>
+							<artifactId>maven-scm-provider-gitexe</artifactId>
+							<version>${scm-gitexe-version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>${dependency-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${jar-plugin-version}</version>
+					<configuration>
+						<archive>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${war-plugin-version}</version>
+					<configuration>
+						<archive>
+							<manifest>
+								<mainClass>${start-class}</mainClass>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${source-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${assembly-plugin-version}</version>
+					<configuration>
+						<!-- avoid warnings for paths longer than 100 chars -->
+						<tarLongFileMode>gnu</tarLongFileMode>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>${eclipse-plugin-version}</version>
+					<configuration>
+						<downloadSources>true</downloadSources>
+						<downloadJavadocs>true</downloadJavadocs>
+						<useProjectReferences>true</useProjectReferences>
+						<!--<additionalBuildcommands> <buildcommand>net.sf.eclipsecs.core.CheckstyleBuilder</buildcommand> 
+							</additionalBuildcommands> <additionalProjectnatures> <projectnature>net.sf.eclipsecs.core.CheckstyleNature</projectnature> 
+							</additionalProjectnatures> -->
+						<!--<failOnError>false</failOnError> -->
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>${site-plugin-version}</version>
+					<configuration>
+						<locales>en</locales>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>lt.velykis.maven.skins</groupId>
+							<artifactId>reflow-velocity-tools</artifactId>
+							<version>${reflow-skin-version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.velocity</groupId>
+							<artifactId>velocity</artifactId>
+							<version>${reflow-skin-velocity-version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-markdown</artifactId>
+							<version>${reflow-skin-doxia-version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-xhtml</artifactId>
+							<version>${reflow-skin-doxia-version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${surefire-plugin-version}</version>
+					<configuration>
+						<argLine>-enableassertions</argLine>
+						<includes>
+							<include>**/*Test.java</include>
+						</includes>
+						<excludes>
+							<exclude>**/Abstract*Test.java</exclude>
+						</excludes>
+						<testFailureIgnore>true</testFailureIgnore>
+						<forkedProcessTimeoutInSeconds>10</forkedProcessTimeoutInSeconds>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${javadoc-plugin-version}</version>
+					<configuration>
+						<links>
+							<link>https://docs.oracle.com/javase/8/docs/api/</link>
+							<link>http://junit.org/junit4/javadoc/latest/</link>
+							<link>https://google.github.io/guava/releases/23.5-jre/api/docs/</link>
+							<link>http://docs.rdf4j.org/javadoc/latest/</link>
+							<link>http://www.slf4j.org/apidocs/</link>
+						</links>
+						<tags>
+							<tag>
+								<name>apiviz.uses</name>
+								<placement>X</placement>
+							</tag>
+							<tag>
+								<name>apiviz.has</name>
+								<placement>X</placement>
+							</tag>
+							<tag>
+								<name>apiviz.owns</name>
+								<placement>X</placement>
+							</tag>
+							<tag>
+								<name>apiviz.exclude</name>
+								<placement>X</placement>
+							</tag>
+							<tag>
+								<name>apiviz.landmark</name>
+								<placement>X</placement>
+							</tag>
+							<tag>
+								<name>apiviz.stereotype</name>
+								<placement>X</placement>
+							</tag>
+						</tags>
+						<show>protected</show>
+						<quiet>true</quiet>
+						<failOnError>false</failOnError>
+						<additionalparam>-Xdoclint:none</additionalparam>
+						<skip>${skipJavadoc}</skip>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jxr-plugin</artifactId>
+					<version>${jxr-plugin-version}</version>
+					<configuration>
+						<linkJavadoc>false</linkJavadoc>
+						<stylesheet>${basedir}${parent-path}/src/site/xref.css</stylesheet>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>jdepend-maven-plugin</artifactId>
+					<version>${jdepend-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>${versions-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>${checkstyle-plugin-version}</version>
+					<configuration>
+						<enableRSS>true</enableRSS>
+						<enableRulesSummary>false</enableRulesSummary>
+						<enableFilesSummary>false</enableFilesSummary>
+						<enableSeveritySummary>true</enableSeveritySummary>
+						<includeTestSourceDirectory>true</includeTestSourceDirectory>
+						<configLocation>file:///${basedir}${parent-path}/src/settings/checkstyle.xml</configLocation>
+						<linkXRef>true</linkXRef>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-report-plugin</artifactId>
+					<version>${surefire-report-plugin-version}</version>
+					<configuration>
+						<aggregate>true</aggregate>
+						<alwaysGenerateSurefireReport>true</alwaysGenerateSurefireReport>
+						<linkXRef>true</linkXRef>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-pmd-plugin</artifactId>
+					<version>${pmd-plugin-version}</version>
+					<configuration>
+						<aggregate>true</aggregate>
+						<targetJdk>${java-source-version}</targetJdk>
+						<linkXref>true</linkXref>
+						<sourceEncoding>UTF-8</sourceEncoding>
+						<rulesets>
+							<ruleset>file:///${basedir}${parent-path}/src/settings/pmd.xml</ruleset>
+						</rulesets>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>findbugs-maven-plugin</artifactId>
+					<version>${findbugs-plugin-version}</version>
+					<inherited>false</inherited>
+					<configuration>
+						<threshold>Normal</threshold>
+						<effort>Default</effort>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>taglist-maven-plugin</artifactId>
+					<version>${taglist-plugin-version}</version>
+					<configuration>
+						<tagListOptions>
+							<tagClasses>
+								<tagClass>
+									<displayName>Problems to fix</displayName>
+									<tags>
+										<tag>
+											<matchString>FIXME</matchString>
+											<matchType>ignoreCase</matchType>
+										</tag>
+									</tags>
+								</tagClass>
+								<tagClass>
+									<displayName>Functionalities to implement</displayName>
+									<tags>
+										<tag>
+											<matchString>TODO</matchString>
+											<matchType>ignoreCase</matchType>
+										</tag>
+									</tags>
+								</tagClass>
+								<tagClass>
+									<displayName>Implementation notes</displayName>
+									<tags>
+										<tag>
+											<matchString>XXX</matchString>
+											<matchType>ignoreCase</matchType>
+										</tag>
+									</tags>
+								</tagClass>
+							</tagClasses>
+						</tagListOptions>
+						<multiLineComments>true</multiLineComments>
+						<sourceDirectory>${basedir}</sourceDirectory>
+						<showEmptyDetails>true</showEmptyDetails>
+						<emptyComments>true</emptyComments>
+						<aggregate>true</aggregate>
+						<linkXRef>true</linkXRef>
+						<xrefLocation>${project.reporting.outputDirectory}/xref</xrefLocation>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-changelog-plugin</artifactId>
+					<version>${changelog-plugin-version}</version>
+					<configuration>
+						<type>range</type>
+						<range>90</range>
+						<!-- last 90 days -->
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>${shade-plugin-version}</version>
+					<configuration>
+						<transformers>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>.tsv</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>.properties</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/services/org.eclipse.rdf4j.rio.RDFParserFactory</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/services/org.eclipse.rdf4j.rio.RDFWriterFactory</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/services/org.eclipse.rdf4j.rio.LanguageHandler</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/services/org.eclipse.rdf4j.rio.DatatypeHandler</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/services/java.nio.file.spi.FileTypeDetector</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/services/org.eclipse.rdf4j.query.parser.QueryParserFactory</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/spring.handlers</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/spring.schemas</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+								<resource>META-INF/spring.factories</resource>
+							</transformer>
+							<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+						</transformers>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.enunciate</groupId>
+					<artifactId>maven-enunciate-plugin</artifactId>
+					<version>${enunciate-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>${nexus-staging-plugin-version}</version>
+					<extensions>true</extensions>
+					<configuration>
+						<serverId>ossrh</serverId>
+						<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+						<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.coderplus.maven.plugins</groupId>
+					<artifactId>copy-rename-maven-plugin</artifactId>
+					<version>${copy-rename-plugin-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>${gpg-plugin-version}</version>
+					<configuration>
+						<skip>${skipGpg}</skip>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>${project-info-plugin-version}</version>
+					<configuration>
+						<!-- takes too long to generate... -->
+						<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>${antrun-plugin-version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 
-    <profiles>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<inherited>false</inherited>
+				<configuration>
+					<licenseName>apache_v2</licenseName>
+				</configuration>
+			</plugin>
+		</plugins>
 
-        <!-- Profile enabling uber JAR generation via shade plugin -->
-        <profile>
-            <id>onejar</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-shade-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>shade</goal>
-                                </goals>
-                                <configuration>
-                                    <shadedArtifactAttached>true</shadedArtifactAttached>
-                                    <shadedClassifierName>onejar</shadedClassifierName>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-            
-        <!-- Profile enabling tasks done only at release time
-             (source and javadoc attachment, deployment on Maven Central)
-             Enable manually with -Prelease -->
-        <profile>
-            <id>release</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>pl.project13.maven</groupId>
-                        <artifactId>git-commit-id-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>revision</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-dependency-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>analyze</id>
-                                <goals>
-                                    <goal>analyze-only</goal>
-                                </goals>
-                                <configuration>
-                                    <failOnWarning>true</failOnWarning>
-                                    <ignoreNonCompile>true</ignoreNonCompile>
-                                </configuration>
-                           </execution>
-                       </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        
-        <!-- Profile for deployment on OSSRH (Maven Central) - Enable manually with -Possrh -->
-        <profile>
-            <id>ossrh</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-           </distributionManagement>
-           <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav-jackrabbit</artifactId>
+				<version>${webdav-plugin-version}</version>
+			</extension>
+		</extensions>
+	</build>
 
-        <!-- Profile for generating jar with test classes.
-             Activated automatically if directory src/test/java exists -->
-        <profile>
-            <id>testjar</id>
-            <activation>
-                <file>
-                    <exists>src/test/java</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>test-jar</goal>
-                                </goals>
-                                <phase>test-compile</phase>
-                                <configuration>
-                                    <includes>
-                                        <include>**</include>
-                                    </includes>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+	<profiles>
 
-        <!-- Profile for skipping web site for modules without site sources.
-             Activated automatically if file src/site/site.xml does not exist -->
-        <profile>
-            <id>site-module</id>
-            <activation>
-                <file>
-                    <missing>${basedir}/src/site/site.xml</missing>
-                </file>
-            </activation>
-            <reporting>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-site-plugin</artifactId>
-                        <configuration>
-                            <!-- Enable the following to skip totally the generation of site for modules
-                            <skip>true</skip>
-                            <skipDeploy>true</skipDeploy>
-                            -->
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-project-info-reports-plugin</artifactId>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>index</report>
-                                    <report>summary</report>
-                                    <report>dependency-info</report>
-                                    <!-- <report>dependencies</report> --> <!-- USEFUL BUT BROKEN ON JAVA 8 -->
-                                    <report>plugins</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>jdepend-maven-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>taglist-maven-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </reporting>
-        </profile>
+		<!-- Profile enabling uber JAR generation via shade plugin -->
+		<profile>
+			<id>onejar</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-shade-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>shade</goal>
+								</goals>
+								<configuration>
+									<shadedArtifactAttached>true</shadedArtifactAttached>
+									<shadedClassifierName>onejar</shadedClassifierName>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
-        <!-- Profile for generating web site with a number of reports.
-             Activated automatically if file src/site/site.xml exists -->
-        <profile>
-            <id>site-parent</id>
-            <activation>
-                <file>
-                    <exists>${basedir}/src/site/site.xml</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <!-- The following goal is necessary in order to allow child modules to
-                             inherit the site descriptor of the parent project -->
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-site-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>attach-descriptor</id>
-                                <goals>
-                                    <goal>attach-descriptor</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>license-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>make-licenses</id>
-                                <phase>generate-sources</phase>
-                                <goals>
-                                    <goal>update-project-license</goal>
-                                    <goal>aggregate-add-third-party</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>com.coderplus.maven.plugins</groupId>
-                        <artifactId>copy-rename-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>copy-file</id>
-                                <phase>generate-sources</phase>
-                                <goals>
-                                    <goal>copy</goal>
-                                </goals>
-                                <configuration>
-                                    <sourceFile>${basedir}/THIRD-PARTY.txt</sourceFile>
-                                    <destinationFile>${basedir}/src/site/markdown/third-party.md</destinationFile>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-            <reporting>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-site-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-project-info-reports-plugin</artifactId>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>index</report>
-                                    <report>summary</report>
-                                    <report>license</report>
-                                    <report>scm</report>
-                                    <report>project-team</report>
-                                    <!-- <report>dependency-management</report> --> <!-- commented as causes depedencies from unrelated projects to be listed -->
-                                    <report>dependency-convergence</report>
-                                    <report>plugins</report>
-                                    <report>issue-tracking</report>
-                                    <report>modules</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>aggregate</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jxr-plugin</artifactId>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>aggregate</report>
-                                    <report>test-aggregate</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>jdepend-maven-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>versions-maven-plugin</artifactId>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <!-- <report>property-updates-report</report> -->
-                                    <report>dependency-updates-report</report>
-                                    <report>plugin-updates-report</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>checkstyle-aggregate</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-report-plugin</artifactId>
-                    </plugin>
-                    <!--
-                    <plugin>
-                      <groupId>org.codehaus.mojo</groupId>
-                      <artifactId>cobertura-maven-plugin</artifactId>
-                      <version>${cobertura-plugin.version}</version>
-                      <configuration>
-                        <aggregate>${aggregate}</aggregate>
-                        <forceMojoExecution>true</forceMojoExecution>
-                        <quiet>true</quiet>
-                      </configuration>
-                    </plugin>
-                    -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-pmd-plugin</artifactId>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>pmd</report>
-                                    <report>cpd</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>taglist-maven-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-changelog-plugin</artifactId>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>changelog</report>
-                                    <report>dev-activity</report>
-                                    <report>file-activity</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                    </plugin>
-                </plugins>
-            </reporting>
-        </profile>
-    </profiles>
+		<!-- Profile enabling tasks done only at release time (source and javadoc 
+			attachment, deployment on Maven Central) Enable manually with -Prelease -->
+		<profile>
+			<id>release</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>pl.project13.maven</groupId>
+						<artifactId>git-commit-id-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>revision</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<phase>package</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<phase>package</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>analyze</id>
+								<goals>
+									<goal>analyze-only</goal>
+								</goals>
+								<configuration>
+									<failOnWarning>true</failOnWarning>
+									<ignoreNonCompile>true</ignoreNonCompile>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-source-version>1.8</java-source-version>
-        <java-target-version>1.8</java-target-version>
+		<!-- Profile for deployment on OSSRH (Maven Central) - Enable manually 
+			with -Possrh -->
+		<profile>
+			<id>ossrh</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
-        <antrun-plugin-version>1.8</antrun-plugin-version>
-        <assembly-plugin-version>3.1.0</assembly-plugin-version>
-        <changelog-plugin-version>2.3</changelog-plugin-version>
-        <checkstyle-plugin-version>3.0.0</checkstyle-plugin-version>
-        <clean-plugin-version>3.0.0</clean-plugin-version>
-        <!-- <cobertura-plugin.version>2.7</cobertura-plugin.version> -->
-        <compiler-plugin-version>3.7.0</compiler-plugin-version>
-        <copy-rename-plugin-version>1.0.1</copy-rename-plugin-version>
-        <dependency-plugin-version>3.0.2</dependency-plugin-version>
-        <deploy-plugin-version>2.8.2</deploy-plugin-version>
-        <eclipse-plugin-version>2.10</eclipse-plugin-version>
-        <enunciate-plugin-version>1.31</enunciate-plugin-version>
-        <findbugs-plugin-version>3.0.5</findbugs-plugin-version>
-        <git-commit-id-plugin-version>2.2.4</git-commit-id-plugin-version>
-        <gpg-plugin-version>1.6</gpg-plugin-version>
-        <install-plugin-version>2.5.2</install-plugin-version>
-        <jar-plugin-version>3.0.2</jar-plugin-version>
-        <javadoc-plugin-version>3.0.0</javadoc-plugin-version>
-        <jdepend-plugin-version>2.0</jdepend-plugin-version>
-        <jxr-plugin-version>2.5</jxr-plugin-version>
-        <license-plugin-version>1.14</license-plugin-version>
-        <nexus-staging-plugin-version>1.6.8</nexus-staging-plugin-version>
-        <pmd-plugin-version>3.9.0</pmd-plugin-version>
-        <project-info-plugin-version>2.9</project-info-plugin-version>
-        <release-plugin-version>2.5.3</release-plugin-version>
-        <shade-plugin-version>3.1.0</shade-plugin-version>
-        <site-plugin-version>3.4</site-plugin-version> <!-- version 3.7 available but incompatible with reflow skin -->
-        <source-plugin-version>3.0.1</source-plugin-version>
-        <surefire-plugin-version>2.21.0</surefire-plugin-version>
-        <surefire-report-plugin-version>2.21.0</surefire-report-plugin-version>
-        <taglist-plugin-version>2.4</taglist-plugin-version>
-        <versions-plugin-version>2.5</versions-plugin-version>
-        <war-plugin-version>3.2.0</war-plugin-version>
-        <webdav-plugin-version>3.0.0</webdav-plugin-version>
+		<!-- Profile for generating jar with test classes. Activated automatically 
+			if directory src/test/java exists -->
+		<profile>
+			<id>testjar</id>
+			<activation>
+				<file>
+					<exists>src/test/java</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jar-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>test-jar</goal>
+								</goals>
+								<phase>test-compile</phase>
+								<configuration>
+									<includes>
+										<include>**</include>
+									</includes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
-        <reflow-skin-version>1.1.1</reflow-skin-version>
-        <reflow-skin-velocity-version>1.7</reflow-skin-velocity-version>
-        <reflow-skin-doxia-version>1.6</reflow-skin-doxia-version> <!-- version 1.8 available but uncompatible with site 3.4 -->
+		<!-- Profile for skipping web site for modules without site sources. Activated 
+			automatically if file src/site/site.xml does not exist -->
+		<profile>
+			<id>site-module</id>
+			<activation>
+				<file>
+					<missing>${basedir}/src/site/site.xml</missing>
+				</file>
+			</activation>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-site-plugin</artifactId>
+						<configuration>
+							<!-- Enable the following to skip totally the generation of site for 
+								modules <skip>true</skip> <skipDeploy>true</skipDeploy> -->
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-project-info-reports-plugin</artifactId>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>index</report>
+									<report>summary</report>
+									<report>dependency-info</report>
+									<!-- <report>dependencies</report> --> <!-- USEFUL BUT BROKEN ON JAVA 8 -->
+									<report>plugins</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>jdepend-maven-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>taglist-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
 
-        <skipJavadoc>false</skipJavadoc>
-        <skipGpg>false</skipGpg>
-        <project-version>${project.version}</project-version>
-        <site.root>http://localhost/</site.root>
-        <site-root>${site.root}</site-root>
-        <parent-path></parent-path>
-        <site-path>file://${basedir}${parent-path}/target/website/</site-path>
+		<!-- Profile for generating web site with a number of reports. Activated 
+			automatically if file src/site/site.xml exists -->
+		<profile>
+			<id>site-parent</id>
+			<activation>
+				<file>
+					<exists>${basedir}/src/site/site.xml</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<!-- The following goal is necessary in order to allow child modules 
+							to inherit the site descriptor of the parent project -->
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-site-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-descriptor</id>
+								<goals>
+									<goal>attach-descriptor</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>license-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>make-licenses</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>update-project-license</goal>
+									<goal>aggregate-add-third-party</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>com.coderplus.maven.plugins</groupId>
+						<artifactId>copy-rename-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-file</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>copy</goal>
+								</goals>
+								<configuration>
+									<sourceFile>${basedir}/THIRD-PARTY.txt</sourceFile>
+									<destinationFile>${basedir}/src/site/markdown/third-party.md</destinationFile>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-site-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-project-info-reports-plugin</artifactId>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>index</report>
+									<report>summary</report>
+									<report>license</report>
+									<report>scm</report>
+									<report>project-team</report>
+									<!-- <report>dependency-management</report> --> <!-- commented as causes depedencies from unrelated projects to be listed -->
+									<report>dependency-convergence</report>
+									<report>plugins</report>
+									<report>issue-tracking</report>
+									<report>modules</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>aggregate</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jxr-plugin</artifactId>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>aggregate</report>
+									<report>test-aggregate</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>jdepend-maven-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<!-- <report>property-updates-report</report> -->
+									<report>dependency-updates-report</report>
+									<report>plugin-updates-report</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-checkstyle-plugin</artifactId>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>checkstyle-aggregate</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-report-plugin</artifactId>
+					</plugin>
+					<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>cobertura-maven-plugin</artifactId> 
+						<version>${cobertura-plugin.version}</version> <configuration> <aggregate>${aggregate}</aggregate> 
+						<forceMojoExecution>true</forceMojoExecution> <quiet>true</quiet> </configuration> 
+						</plugin> -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-pmd-plugin</artifactId>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>pmd</report>
+									<report>cpd</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>taglist-maven-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-changelog-plugin</artifactId>
+						<reportSets>
+							<reportSet>
+								<reports>
+									<report>changelog</report>
+									<report>dev-activity</report>
+									<report>file-activity</report>
+								</reports>
+							</reportSet>
+						</reportSets>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+	</profiles>
 
-        <site.topbar>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-source-version>1.8</java-source-version>
+		<java-target-version>1.8</java-target-version>
+
+		<antrun-plugin-version>1.8</antrun-plugin-version>
+		<assembly-plugin-version>3.1.1</assembly-plugin-version>
+		<changelog-plugin-version>2.3</changelog-plugin-version>
+		<checkstyle-plugin-version>3.0.0</checkstyle-plugin-version>
+		<clean-plugin-version>3.1.0</clean-plugin-version>
+		<!-- <cobertura-plugin.version>2.7</cobertura-plugin.version> -->
+		<compiler-plugin-version>3.8.0</compiler-plugin-version>
+		<copy-rename-plugin-version>1.0.1</copy-rename-plugin-version>
+		<dependency-plugin-version>3.1.1</dependency-plugin-version>
+		<deploy-plugin-version>3.0.0-M1</deploy-plugin-version>
+		<enunciate-plugin-version>1.31</enunciate-plugin-version>
+		<findbugs-plugin-version>3.0.5</findbugs-plugin-version>
+		<git-commit-id-plugin-version>2.2.6</git-commit-id-plugin-version>
+		<gpg-plugin-version>1.6</gpg-plugin-version>
+		<install-plugin-version>3.0.0-M1</install-plugin-version>
+		<jar-plugin-version>3.1.1</jar-plugin-version>
+		<javadoc-plugin-version>3.0.1</javadoc-plugin-version>
+		<jdepend-plugin-version>2.0</jdepend-plugin-version>
+		<jxr-plugin-version>3.0.0</jxr-plugin-version>
+		<license-plugin-version>1.16</license-plugin-version>
+		<nexus-staging-plugin-version>1.6.8</nexus-staging-plugin-version>
+		<pmd-plugin-version>3.9.0</pmd-plugin-version>
+		<project-info-plugin-version>3.0.0</project-info-plugin-version>
+		<release-plugin-version>2.5.3</release-plugin-version>
+		<scm-gitexe-version>1.11.1</scm-gitexe-version>
+		<shade-plugin-version>3.2.1</shade-plugin-version>
+		<site-plugin-version>3.7.1</site-plugin-version> <!-- version 3.7 available but incompatible with reflow skin -->
+		<source-plugin-version>3.0.1</source-plugin-version>
+		<surefire-plugin-version>3.0.0-M3</surefire-plugin-version>
+		<surefire-report-plugin-version>3.0.0-M3</surefire-report-plugin-version>
+		<taglist-plugin-version>2.4</taglist-plugin-version>
+		<versions-plugin-version>2.7</versions-plugin-version>
+		<war-plugin-version>3.2.2</war-plugin-version>
+		<webdav-plugin-version>3.2.0</webdav-plugin-version> <!-- 3.3.1 broken -->
+
+		<reflow-skin-version>1.1.1</reflow-skin-version>
+		<reflow-skin-velocity-version>1.7</reflow-skin-velocity-version>
+		<reflow-skin-doxia-version>1.6</reflow-skin-doxia-version> <!-- version 1.8 available but uncompatible with site 3.4 -->
+
+		<skipJavadoc>false</skipJavadoc>
+		<skipGpg>false</skipGpg>
+		<project-version>${project.version}</project-version>
+		<site.root>http://localhost/</site.root>
+		<site-root>${site.root}</site-root>
+		<parent-path></parent-path>
+		<site-path>file://${basedir}${parent-path}/target/website/</site-path>
+
+		<site.topbar>
             <![CDATA[
             <div id="dkmbar-container" style="font: normal 14px/1.5em sans-serif !important;">
                 <div id="dkmbar">
@@ -1152,7 +1198,7 @@
                 }
             </style>
             ]]>
-        </site.topbar>
-    </properties>
+		</site.topbar>
+	</properties>
 
 </project>
